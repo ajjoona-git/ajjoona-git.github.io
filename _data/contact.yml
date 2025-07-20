@@ -1,5 +1,9 @@
 #  The contact options.
 
+- type: theme-toggle
+  icon: "fas fa-moon" # 또는 "fas fa-sun" (현재 모드에 따라 변경)
+  noblank: true # 클릭 시 현재 탭에서 동작
+
 - type: github
   icon: "fab fa-github"
 

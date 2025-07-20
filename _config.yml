@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: Joona # the main title
 
-tagline: 개발 연습생 # it will display as the subtitle
+tagline: 개발 연습생 Blog # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
