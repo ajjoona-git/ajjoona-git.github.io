@@ -1,18 +1,33 @@
 <!-- ...existing code... -->
 <ul class="sidebar-footer__list">
-  <!-- 다크/라이트 모드 토글 아이콘 추가 -->
-  <li>
-    <button id="mode-toggle-btn" aria-label="Toggle color mode">
-      <i class="fas fa-adjust"></i>
-    </button>
-  </li>
-  <!-- ...기존 contacts 아이콘 리스트... -->
+  {% for contact in site.data.contact %}
+    {% if contact.type == 'theme-toggle' %}
+      <li>
+        <button id="mode-toggle-btn" aria-label="Toggle color mode">
+          <i class="{{ contact.icon }}"></i>
+        </button>
+      </li>
+    {% elsif contact.type == 'email' %}
+      <li>
+        <a href="mailto:{{ site.social.email }}" aria-label="email">
+          <i class="{{ contact.icon }}"></i>
+        </a>
+      </li>
+    {% elsif contact.type == 'github' %}
+      <li>
+        <a href="https://github.com/{{ site.github.username }}" aria-label="github" target="_blank" rel="noopener">
+          <i class="{{ contact.icon }}"></i>
+        </a>
+      </li>
+    {% else %}
+      <!-- ...기타 contact 타입 처리... -->
+    {% endif %}
+  {% endfor %}
 </ul>
 <!-- ...existing code... -->
 <script>
-  // 다크/라이트 모드 토글 스크립트 (Chirpy 테마에서 이미 제공하는 경우 생략 가능)
-  document.getElementById('mode-toggle-btn').onclick = function () {
-    // ...Chirpy 테마의 모드 토글 함수 호출...
+  document.getElementById('mode-toggle-btn')?.addEventListener('click', function () {
     window.toggleTheme && window.toggleTheme();
-  };
+  });
 </script>
+<!-- ...existing code... -->
