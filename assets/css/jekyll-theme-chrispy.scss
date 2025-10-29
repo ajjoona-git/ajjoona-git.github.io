@@ -1,11 +1,15 @@
 ---
 ---
 
+$dark-primary: #ffb700; /* 원하는 다크 모드 강조색 */
+$light-primary: #ff9900; /* 원하는 라이트 모드 강조색 */
+
 /*
  * 1. Chirpy 테마의 기본 스타일을 먼저 불러옵니다.
  * (이 줄이 없으면 블로그 스타일이 모두 깨집니다)
  */
-@use 'main {%- if jekyll.environment == ' production ' -%}.bundle {%- endif -%} ';
+@use 'main {%- if jekyll.environment == ' production
+  ' -%}.bundle {%- endif -%} ';
 
 /*
  * 2. (튜토리얼 4.2. 7단계) 커스텀 코드 블럭 스타일을 덮어씁니다.
@@ -28,3 +32,36 @@
   }
 }
 /* --- 커스텀 종료 --- */
+
+// 홈페이지 카드 제목 및 카테고리 이름 크기 조정
+.card-title {
+  font-size: 1.2rem;
+}
+.card-text.content p {
+  font-size: 0.875rem;
+}
+
+// 카테고리 페이지 카테고리 이름 크기 조정
+.category-name {
+  font-size: 1rem;
+}
+
+// 아카이브 페이지 글자 크기 조정
+#archive a {
+  font-size: 1rem;
+}
+#archive .date.day {
+  font-size: 80%;
+}
+
+// 동적 제목 글꼴 설정
+.dynamic-title {
+  font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
+}
+
+// 아바타 중앙 정렬
+#avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
