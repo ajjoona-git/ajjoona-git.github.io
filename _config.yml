@@ -11,10 +11,6 @@ lang: ko
 # Change to your timezone › https://zones.arilyn.cc
 timezone: Asia/Seoul
 
-# 플러그인 목록
-plugins:
-  - jekyll-polyglot
-
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
@@ -231,8 +227,3 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-# --- 다국어 (i18n) Polyglot 설정 ---
-languages: ["ko", "en"]
-default_lang: "ko"
-exclude_from_localization: ["assets", "javascript", "css", "public"]
-parallel_localization: false
