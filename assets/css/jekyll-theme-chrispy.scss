@@ -1,0 +1,30 @@
+---
+---
+
+/*
+ * 1. Chirpy 테마의 기본 스타일을 먼저 불러옵니다.
+ * (이 줄이 없으면 블로그 스타일이 모두 깨집니다)
+ */
+@use 'main {%- if jekyll.environment == ' production ' -%}.bundle {%- endif -%} ';
+
+/*
+ * 2. (튜토리얼 4.2. 7단계) 커스텀 코드 블럭 스타일을 덮어씁니다.
+ * (4.1. 6단계에서 생성한 _sass 폴더 내부의 파일을 가리키도록 경로를 수정했습니다.)
+ */
+
+/* --- Rouge 코드 블럭 하이라이팅 커스텀 --- */
+
+/* 라이트 모드 스타일 임포트 */
+@media (prefers-color-scheme: light) {
+  html[data-mode='light'].highlight {
+    @import '_sass/rouge-github-light';
+  }
+}
+
+/* 다크 모드 스타일 임포트 */
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode='light']).highlight {
+    @import '_sass/rouge-github-dark';
+  }
+}
+/* --- 커스텀 종료 --- */
