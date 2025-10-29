@@ -1,0 +1,13 @@
+# _data/contact.yml
+
+- type: github
+  icon: "fab fa-github"
+  # 이 항목은 _config.yml의 site.github.username 값을 사용합니다.
+
+- type: email
+  icon: "fas fa-envelope"
+  # 이 항목은 _config.yml의 site.social.email 값을 사용합니다.
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
