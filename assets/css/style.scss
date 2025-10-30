@@ -31,30 +31,22 @@ $light-primary: #ff9900;
 // 아바타 중앙 정렬
 #avatar {
   display: block;
-  margin-left: 33%;
-  margin-right: 66%;
+  margin: auto;
 }
-
-// --- (사용자가 이전에 추가했던 다른 스타일들) ---
 
 // 홈페이지 카드 제목 및 카테고리 이름 크기 조정
-.card-title {
+#post-list .card .card-body .card-title {
   font-size: 1.2rem;
 }
-.card-text.content p {
+#post-list .card .card-body .content {
   font-size: 0.875rem;
 }
 
-// 카테고리 페이지 카테고리 이름 크기 조정
-.category-name {
-  font-size: 1rem;
-}
-
 // 아카이브 페이지 글자 크기 조정
-#archive a {
+#archives ul li {
   font-size: 1rem;
 }
-#archive .date.day {
+#archives .date.day {
   font-size: 80%;
 }
 
@@ -64,10 +56,19 @@ $light-primary: #ff9900;
 }
 
 #sidebar .profile-wrapper {
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
-#sidebar .site-title,
-#sidebar .site-subtitle {
+.site-title,
+.site-subtitle {
   padding-left: 1.25rem;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
+
+@media (min-width: 1650px) {
+    .site-title,
+    .site-subtitle {
+        padding-left: 2.75rem;
+        padding-right: 2.75rem;
+    }
 }
