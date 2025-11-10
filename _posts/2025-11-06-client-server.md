@@ -1,8 +1,8 @@
 ---
-title: "[배포] 서버는 어떻게 클라이언트의 요청에 응답할까?"
+title: "[WEB] 서버는 어떻게 클라이언트의 요청에 응답할까?"
 date: 2025-11-06 16:00:00 +0900
-categories: [프로젝트 - 쉽길, 웹 개발]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [nginx, gunicorn, wsgi, was, webserver, cgi, deploy]      # 태그 (소문자 권장)
+categories: [프로젝트 - 쉽길, CS]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [cs, web, server, client, deployment, nginx, gunicorn, wsgi, was, cgi]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/posts/my-post-banner.png # (선택) 대표 이미지
@@ -120,16 +120,18 @@ WSGI 미들웨어는 서버 (Gunicorn)과 앱 (Django) 사이에 끼는 코드 �
 
 전체 흐름을 정리해보면 아래 그림과 같다.
 
-여기서 사용자(브라우저)가 ‘클라이언트’, 웹 서버 (Nginx)로 박스쳐져 있는 부분이 모두 ‘서버’이다.
+여기서 사용자(브라우저)가 **‘클라이언트’**, 웹 서버 (Nginx)로 박스쳐져 있는 부분이 모두 **‘서버’**이다.
 
-- 웹 서버 (Nginx)는
+- **웹 서버 (Nginx)**는
     - 정적 요청이라면 직접 응답하고,
     - 동적 요청은 WSGI 서버에 전달한다.
-- WSGI 서버 (Gunicorn)는
+
+- **WSGI 서버 (Gunicorn)**는
     - HTTP 요청을 받아 WSGI에 맞춰 데이터를 가공한 뒤,
     - WSGI 애플리케이션 (Django 코드)을 품고 있는 워커 프로세스에게 일을 분배(지시)한다.
     - Django 앱이 실행될 수 있는 환경을 제공한다.
-- WSGI 애플리케이션 (Django)은
+    
+- **WSGI 애플리케이션 (Django)**은
     - 작성된 Django 코드를 통해 로직을 수행하여
     - 응답을 생성하고, 반환한다.
 

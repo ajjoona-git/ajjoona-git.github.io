@@ -1,8 +1,8 @@
 ---
 title: "[GitHub] HttpError: Not Found 이것 뭐에요?"
 date: 2025-11-10 09:00:00 +0900
-categories: [블로그, GitHub]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [github, actions, deploy]      # 태그 (소문자 권장)
+categories: [블로그, DEBUG]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [github, github pages, github actions, error, debug, httperror, deployment]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-10-httperror/7.png # (선택) 대표 이미지
@@ -14,7 +14,7 @@ image: /assets/img/posts/2025-11-10-httperror/7.png # (선택) 대표 이미지
 
 열심히 포스트해서 commit, push하고 있었는데 블로그에 접속하니까 별안간 페이지가 없어졌다.
 
-![404 PageNotFoundError](/assets/img/posts/2025-11-10-httperror/7.png)
+<!-- ![404 PageNotFoundError](/assets/img/posts/2025-11-10-httperror/7.png) -->
 
 *띠로리...*
 
@@ -61,7 +61,7 @@ pages-deploy.yml 워크플로우는 "GitHub Actions"를 사용해 사이트를 �
 이렇게 하면 해결된다!
 
 
-### Public인지 확인하기 
+### Public인지 확인하기!
 
 만약 [Pages] 탭에서 "Build and deployment" 섹션이 보이지 않는다면 (아래 사진 참고),
 
