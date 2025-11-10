@@ -18,7 +18,7 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 
 그 첫 걸음으로, **Issues** 탭을 뜯어보려고 한다.
 
-![Issues](/assets/img/posts/2025-11-08-github-issue-setting_1.png)
+![Issues](/assets/img/posts/2025-11-08-github-issue-setting/1.png)
 
 ---
 
@@ -32,8 +32,8 @@ label은 issues, discussions, projects, PR 까지 관통하는 태그(tag)역할
 - fix, feat, refactor, design 등 작업 내용이 어떤 것인지 알 수 있도록 분류했다. (버그 수정, 기능 구현, 코드 구조 변경, 디자인 수정 등)
 - docs, chore, question, urgent 등 작업 분류에 속하지 않거나 추가적으로 제기해야 하는 이슈들에 대해서 추가했다.
 
-![label 1](/assets/img/posts/2025-11-08-github-issue-setting_10.png)
-![label 2](/assets/img/posts/2025-11-08-github-issue-setting_11.png)
+![label 1](/assets/img/posts/2025-11-08-github-issue-setting/10.png)
+![label 2](/assets/img/posts/2025-11-08-github-issue-setting/11.png)
 
 ---
 
@@ -47,11 +47,11 @@ Issue 템플릿을 설정하는 방법은 두 가지가 있다.
 
 레포지토리의 `Settings` > `General` > `Features` > `Issues`의 "Set up templates" 버튼을 누르면 템플릿을 추가/수정할 수 있다.
 
-![settings](/assets/img/posts/2025-11-08-github-issue-setting_2.png)
+![settings](/assets/img/posts/2025-11-08-github-issue-setting/2.png)
 
 `Add template` 버튼을 누르면 기본으로 제공해주는 Bug report / Feature request 와 Custom template, 3가지 옵션이 있다.
 
-![add template](/assets/img/posts/2025-11-08-github-issue-setting_3.png)
+![add template](/assets/img/posts/2025-11-08-github-issue-setting/3.png)
 
 Bug report / Feature request을 수정해서 사용할 수도, 필요하다면 Custom template으로 새로 만들어서 사용할 수도 있다.
 
@@ -76,7 +76,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 #### BUG
 
-![Bug issue template](/assets/img/posts/2025-11-08-github-issue-setting_12.png)
+![Bug issue template](/assets/img/posts/2025-11-08-github-issue-setting/12.png)
 
 ```markdown
 ## #️⃣ 어떤 버그인가요?
@@ -110,7 +110,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 #### FEAT
 
-![Feat issue template](/assets/img/posts/2025-11-08-github-issue-setting_4.png)
+![Feat issue template](/assets/img/posts/2025-11-08-github-issue-setting/4.png)
 
 ```markdown
 ## #️⃣ 어떤 기능인가요?
@@ -131,7 +131,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 #### REFACTOR
 
-![Refactor issue template](/assets/img/posts/2025-11-08-github-issue-setting_5.png)
+![Refactor issue template](/assets/img/posts/2025-11-08-github-issue-setting/5.png)
 
 ```markdown
 ## #️⃣ 리팩토링 대상
@@ -156,7 +156,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 #### DOCS
 
-![Docs issue template](/assets/img/posts/2025-11-08-github-issue-setting_6.png)
+![Docs issue template](/assets/img/posts/2025-11-08-github-issue-setting/6.png)
 
 ```markdown
 ## #️⃣ 어떤 문서인가요?
@@ -176,7 +176,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 #### TASK
 
-![Task issue template](/assets/img/posts/2025-11-08-github-issue-setting_7.png)
+![Task issue template](/assets/img/posts/2025-11-08-github-issue-setting/7.png)
 
 ```markdown
 ## #️⃣ 어떤 작업인가요?
@@ -193,7 +193,7 @@ Preview and edit 버튼을 눌러 세부 내용을 수정하고, Propose changes
 
 첫 커밋으로 해당 작업을 남기게 되었는데, 브랜치를 만들고 PR하는 옵션을 선택했음에도 브랜치가 꼬이는 상황이 생겼다. 왜냐하면 `master` 브랜치만 존재하는 상황이었기 때문에 merge PR을 master로 해야만 했다. (약식 git Flow 브랜치 전략을 따르자면 master가 아닌 dev 브랜치에 병합해야 했다.)
 
-![template 저장 후 커밋](/assets/img/posts/2025-11-08-github-issue-setting_8.png)
+![template 저장 후 커밋](/assets/img/posts/2025-11-08-github-issue-setting/8.png)
 
 
 ### 2-2. markdown 또는 yml 파일 생성
@@ -430,7 +430,7 @@ body:
 merge PR까지 모두 마쳤고, 이제 "New issue" 버튼을 클릭하면 다음과 같은 화면이 뜬다.
 원하는 이슈 카테고리를 고르면 앞서 저장한 템플릿을 확인할 수 있다!
 
-![issue template 적용](/assets/img/posts/2025-11-08-github-issue-setting_9.png)
+![issue template 적용](/assets/img/posts/2025-11-08-github-issue-setting/9.png)
 
 
 ---
