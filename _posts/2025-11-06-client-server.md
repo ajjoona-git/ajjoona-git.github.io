@@ -139,7 +139,7 @@ WSGI 미들웨어는 서버 (Gunicorn)과 앱 (Django) 사이에 끼는 코드 �
 
 ---
 
-### 참고
+#### 레퍼런스
 
 [PEP 3333 - Python Web Server Gateway Interface v1.0.1](https://peps.python.org/pep-3333/)
 
