@@ -5,7 +5,7 @@ categories: [블로그, GitHub]  # 계층적 카테고리 지원 [대분류, 소
 tags: [github, actions, deploy]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
-# image: /assets/img/2025-10-01-test-post/banner.png # (선택) 대표 이미지
+image: /assets/img/posts/2025-11-10-httperror/7.png # (선택) 대표 이미지
 ---
 
 ### 어느날 갑자기 블로그가 없어졌다..?
@@ -14,7 +14,7 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 
 열심히 포스트해서 commit, push하고 있었는데 블로그에 접속하니까 별안간 페이지가 없어졌다.
 
-<!-- ![404 PageNotFoundError](image.png) -->
+![404 PageNotFoundError](/assets/img/posts/2025-11-10-httperror/7.png)
 
 *띠로리...*
 
@@ -23,20 +23,21 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 
 ### GitHub Actions를 살펴보자
 
-<!-- ![GitHub Actions](image-1.png) -->
+![GitHub Actions](/assets/img/posts/2025-11-10-httperror/6.png)
 
 workflows를 보니 #15 "post: [GitHub] Issue 템플릿 설정하기" commit부터 빨간색으로 **Build and Deploy 실패** 표시가 되어있다.
 자세히 알아보자.
 
-<!-- ![Build Failure](image-2.png) -->
+![Build Failure](/assets/img/posts/2025-11-10-httperror/5.png)
+
+![Build and Deployment](/assets/img/posts/2025-11-10-httperror/4.png)
 
 deploy과정까지는 가지도 못했다.
 
 build에서 `HttpError: Not Found` 에러가 발생했다.
 
-```
-build
-
+```Bash
+# 오류 메세지
 Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions, or consider exploring the `enablement` parameter for this action.
 ```
 
@@ -55,7 +56,7 @@ pages-deploy.yml 워크플로우는 "GitHub Actions"를 사용해 사이트를 �
 
 "Source" 옵션을 **"GitHub Actions"**로 변경한다. (아마 "Deploy from a branch"로 되어 있을 것)
 
-<!-- ![Settings](image-3.png) -->
+![Settings](/assets/img/posts/2025-11-10-httperror/3.png)
 
 이렇게 하면 해결된다!
 
@@ -64,7 +65,7 @@ pages-deploy.yml 워크플로우는 "GitHub Actions"를 사용해 사이트를 �
 
 만약 [Pages] 탭에서 "Build and deployment" 섹션이 보이지 않는다면 (아래 사진 참고),
 
-<!-- ![private repo](image-4.png) -->
+![private repo](/assets/img/posts/2025-11-10-httperror/2.png)
 
 레포지토리가 **private**으로 설정되어 있을 것이다!
 
@@ -78,3 +79,4 @@ Private(비공개) 저장소에서 GitHub Pages를 사용하려면 GitHub Pro (�
 
 Public으로 전환하고 위의 "GitHub Actions" 옵션을 적용했더니, 바로 해결!
 
+![Blog 화면](/assets/img/posts/2025-11-10-httperror/1.png)
