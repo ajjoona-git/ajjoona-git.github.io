@@ -14,7 +14,7 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 
 열심히 포스트해서 commit, push하고 있었는데 블로그에 접속하니까 별안간 페이지가 없어졌다.
 
-![404 PageNotFoundError](image.png)
+<!-- ![404 PageNotFoundError](image.png) -->
 
 *띠로리...*
 
@@ -23,12 +23,12 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 
 ### GitHub Actions를 살펴보자
 
-![GitHub Actions](image-1.png)
+<!-- ![GitHub Actions](image-1.png) -->
 
 workflows를 보니 #15 "post: [GitHub] Issue 템플릿 설정하기" commit부터 빨간색으로 **Build and Deploy 실패** 표시가 되어있다.
 자세히 알아보자.
 
-![Build Failure](image-2.png)
+<!-- ![Build Failure](image-2.png) -->
 
 deploy과정까지는 가지도 못했다.
 
@@ -55,16 +55,16 @@ pages-deploy.yml 워크플로우는 "GitHub Actions"를 사용해 사이트를 �
 
 "Source" 옵션을 **"GitHub Actions"**로 변경한다. (아마 "Deploy from a branch"로 되어 있을 것)
 
-![Settings](image-3.png)
+<!-- ![Settings](image-3.png) -->
 
 이렇게 하면 해결된다!
 
 
-### Public인지 확인하기
+### Public인지 확인하기 
 
 만약 [Pages] 탭에서 "Build and deployment" 섹션이 보이지 않는다면 (아래 사진 참고),
 
-![private repo](image-4.png)
+<!-- ![private repo](image-4.png) -->
 
 레포지토리가 **private**으로 설정되어 있을 것이다!
 
