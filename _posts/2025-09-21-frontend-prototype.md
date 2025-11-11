@@ -8,10 +8,11 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 # image: /assets/img/posts/my-post-banner.png # (선택) 대표 이미지
 ---
 
-*이전 게시글 보고오기 >>>*
+*이전 게시글 보고오기 >>*
 {% linkpreview "https://ajjoona-git.github.io/posts/frontend-figma/" %}
 
-
+  
+  
 계획이 좀 바뀌었다.
 
 원래 계획은 팀원들과 각자 페이지를 맡아 피그마 작업 후에 톤앤매너를 맞추고 코드화하려고 했었다. 그러나 피그마를 다들 처음 써보기도 하고, 다들 각자의 작업이 바쁘기 때문에 내가 초안을 작성하기로 했다.
