@@ -25,7 +25,10 @@ $light-primary: #ff9900;
   }
 }
 
-/* 4. (필수) 커스텀 CSS 덮어쓰기 */
+/* 4. Link Preview 플러그인 CSS 불러오기 */
+@import "linkpreview.css";
+
+/* 5. (필수) 커스텀 CSS 덮어쓰기 */
 /* 이 코드는 @use 'main'보다 *반드시* 아래에 있어야 합니다. */
 
 h1 {
