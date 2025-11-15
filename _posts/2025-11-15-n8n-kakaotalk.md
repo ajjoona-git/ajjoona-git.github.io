@@ -172,7 +172,7 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 
 ### 3. 웹훅(Webhook) 연결하기
 
-### 1. n8n 워크플로우에서 Webhook 노드 생성
+#### 1. n8n 워크플로우에서 Webhook 노드 생성
     - Production URL 복사
     - HTTP Method: POST
 
