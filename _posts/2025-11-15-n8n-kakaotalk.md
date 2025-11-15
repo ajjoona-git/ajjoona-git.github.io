@@ -10,7 +10,7 @@ image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 �
 
 본격적으로 n8n을 써보기에 앞서서, 간단한 기능을 구현해보았다.
 
-바로 카카오톡 API를 이용해서 카카오톡의 나에게 보내기를 자동화하는 것이다.
+바로 카카오톡 API를 이용해서 **카카오톡의 나에게 보내기를 자동화**하기!
 
 ## 카카오톡 (나에게 보내기) API
 
@@ -25,7 +25,7 @@ image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 �
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/25.png)
 
 #### 3.  앱 > 일반 > 플랫폼 > Web 플랫폼 등록
-    - 사이트 도메인: [`https://localhost:3000`](https://localhost:3000/)
+- 사이트 도메인: [`https://localhost:3000`](https://localhost:3000/)
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/24.png)
 
@@ -38,7 +38,7 @@ image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 �
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/22.png)
 
 #### 6. 제품 설정 > 카카오 로그인 > 동의항목 > 접근권한
-    - **이용 중 동의** 체크
+- **이용 중 동의** 체크
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/21.png)
 
@@ -173,13 +173,13 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 ### 3. 웹훅(Webhook) 연결하기
 
 #### 1. n8n 워크플로우에서 Webhook 노드 생성
-    - Production URL 복사
-    - HTTP Method: POST
+- Production URL 복사
+- HTTP Method: POST
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/6.png)
 
 #### 2. 기존 HTTP Request (카카오톡) 노드 수정
-    - Body Parameters의 Value를 Expression으로 변경하고 다음 코드를 입력한다.
+- Body Parameters의 Value를 Expression으로 변경하고 다음 코드를 입력한다.
 
 ```
 {
@@ -198,8 +198,8 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/4.png)
 
 #### 4. 가짜 폼으로 웹훅 트리거 작동하는지 확인하기
-    - 코드의 YOUR_N8N_WEBHOOK_PRODUCTION_URL 부분을 1번에서 복사했던 n8n Production URL로 교체
-    - test.html로 저장
+- 코드의 YOUR_N8N_WEBHOOK_PRODUCTION_URL 부분을 1번에서 복사했던 n8n Production URL로 교체
+- test.html로 저장
 
 ```html
 <!DOCTYPE html>
