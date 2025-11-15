@@ -52,6 +52,7 @@ image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 �
 
 두 가지 방법을 소개하겠다.
 
+---
 
 ### 1. 수동으로 인가 코드 받기
 
@@ -81,13 +82,11 @@ https://kauth.kakao.com/oauth/authorize?client_id=YOUR_REST_API_KEY&redirect_uri
     - `client_id`: REST API 키
     - `code`: 이전 단계(인가 코드 받기)에서 받은 **인가 코드**
 
-<aside>
 
-**주의사항**
-- 인가 코드 요청의 `redirect_uri`와 curl의 `redirect_uri`가 일치해야 하며,
-리다이렉션 URI에 등록되어 있어야 한다.
-
-</aside>
+> **주의사항**
+> - 인가 코드 요청의 `redirect_uri`와 curl의 `redirect_uri`가 일치해야 하며,
+> 리다이렉션 URI에 등록되어 있어야 한다.
+{: .prompt-info }
 
 ```
 curl -v -X POST "https://kauth.kakao.com/oauth/token" \
@@ -138,7 +137,7 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/11.png)
 
-. Credential 생성
+#### 3. Credential 생성
 - HOME > Credentials > Create credential > OAuth2 API 선택 (혹은 Kakao)
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/10.png)
@@ -152,7 +151,8 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 - `Scope`: talk_message
 - `Authentication`: 카카오는 중요 토큰 등을 본문에 제공하기 때문에 Body로 설정
 - Connect my account 까지 완료
-1. HTTP Request 노드 생성
+
+#### 4. HTTP Request 노드 생성
 - Authentication > Generic Credential Type > OAuth2 API > Kakao (이전에 만든 credential)
 - Send Body 섹션 설정
     - Body Content Type: Form Urlencoded
@@ -167,6 +167,8 @@ curl -v -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/8.png)
 
 ![image.png](/assets/img/posts/2025-11-15-n8n-kakaotalk/7.png)
+
+---
 
 ### 3. 웹훅(Webhook) 연결하기
 
