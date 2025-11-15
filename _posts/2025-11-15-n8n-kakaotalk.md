@@ -84,9 +84,10 @@ https://kauth.kakao.com/oauth/authorize?client_id=YOUR_REST_API_KEY&redirect_uri
 
 
 > **주의사항**
-> - 인가 코드 요청의 `redirect_uri`와 curl의 `redirect_uri`가 일치해야 하며,
+> 인가 코드 요청의 `redirect_uri`와 curl의 `redirect_uri`가 일치해야 하며,
+> 
 > 리다이렉션 URI에 등록되어 있어야 한다.
-{: .prompt-info }
+{: .prompt-tip }
 
 ```
 curl -v -X POST "https://kauth.kakao.com/oauth/token" \
