@@ -2,7 +2,7 @@
 title: "[TEST] 마크다운 스타일 가이드 (Markdown Style Guide)"
 date: 2025-11-05 09:00:00 +0900
 categories: [블로그, TEST]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [markdown, style guide, css, github]      # 태그 (소문자 권장)
+tags: [markdown, style, guide, css, github]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/my-post-banner.png # (선택) 대표 이미지
