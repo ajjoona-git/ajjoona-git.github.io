@@ -1,8 +1,8 @@
 ---
-title: "[n8n] MVP 선정하고 아키텍처 설계하기"
+title: "[n8n] MVP 선정과 아키텍처 설계"
 date: 2025-11-20 09:00:00 +0900
 categories: [해커톤, n8n]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [n8n, nc/lc, ai, api, supabase, db, supabase]      # 태그 (소문자 권장)
+tags: [n8n, nc/lc, ai, api, supabase, db, architecture, mvp]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-20-n8n-mvp-architecture/3.png # (선택) 대표 이미지
@@ -76,14 +76,24 @@ RAGFlow와의 통신을 전담한다.
 ## 3. n8n 워크플로우 구현 패턴: "Router Pattern"
 n8n 워크플로우의 기본 뼈대에 **단일 웹훅 진입점 + Switch 분기** 방식을 도입했다.
 
-```JavaScript
-
+```ts
 // 프론트엔드 요청 예시
-axios.post('/checklist-service', {
-  action: 'analyze_jeonse', // 이 action 값에 따라 n8n이 길을 찾습니다.
-  salePrice: 300000000,
-  deposit: 250000000
-});
+// gemini.md 기반 서비스 URL
+const checklistServiceUrl = import.meta.env.VITE_CHECKLIST_SERVICE_URL; // 실제 체크리스트 서비스 URL로 교체
+
+fetch(checklistServiceUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  // 'actionType'을 body에 담아 n8n으로 전송합니다.
+  body: JSON.stringify({
+    action: actionType,
+    // 필요하다면 다른 데이터도 함께 보낼 수 있습니다.
+    // 예: checklistId: id
+  }),
+})
+...
 ```
 
 n8n 내부에서는 Switch 노드가 `body.action` 값을 확인하여, '위험도 분석 로직'으로 보낼지, '이메일 발송 로직'으로 보낼지를 결정한다. 이 구조 덕분에 API 엔드포인트 관리가 수월해졌다.
