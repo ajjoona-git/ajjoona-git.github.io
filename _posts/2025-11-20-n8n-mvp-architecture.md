@@ -5,29 +5,31 @@ categories: [해커톤, n8n]  # 계층적 카테고리 지원 [대분류, 소분
 tags: [n8n, nc/lc, ai, api, supabase, db, supabase]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
-# image: /assets/img/posts/2025-11-20-n8n-checklist/cover.png # (선택) 대표 이미지
+image: /assets/img/posts/2025-11-20-n8n-mvp-architecture/3.png # (선택) 대표 이미지
 ---
 
-해커톤 기간 동안 아이디어를 실제 동작하는 서비스로 구현하기 위해 고민했던 MVP 선정 과정과 n8n 기반의 백엔드 아키텍처 설계 전략을 공유합니다.
+앞서 피그마로 디자인한 프로토타입을 실제 동작하는 서비스로 구현하기 위해 고민했던 MVP 선정 과정과 n8n 기반의 백엔드 아키텍처 설계 전략을 공유합니다.
 
 ## 1. MVP 선정: "선택과 집중"
-처음 아이디어 회의에서는 회원가입부터 계약, 입주, 퇴거까지 모든 과정을 다루고 싶었습니다. 하지만 2박 3일이라는 시간 제약 속에서 모든 기능을 완성하는 것은 불가능했습니다. 우리는 **"사용자에게 가장 핵심적인 가치를 주는 시나리오 하나만 완벽하게 구현하자"**는 전략을 세웠습니다.
 
-우리가 집중한 핵심 시나리오
-사용자가 가장 불안해하는 순간은 **"계약서를 받아들고 도장을 찍기 직전"**입니다. 따라서 다음 3가지 기능을 MVP(Minimum Viable Product)로 확정했습니다.
+사용자가 가장 불안해하는 순간은 **"계약서를 받아들고 도장을 찍기 직전"**이다. 매물을 확정했다는 가정 하에, 계약을 하려면 필요한 서류와 확인해야 할 사항들을 위주로 체크리스트를 구성했다. 그중에서도 자동화가 가능한 기능을 우선적으로 n8n 워크플로우 구현 테스트를 해보기로 했다. 따라서 다음 3가지 기능을 MVP(Minimum Viable Product)로 확정했다.
 
-📄 계약서 꼼꼼히 살펴보기 (Document Analysis): 사용자가 계약서 사진을 찍어 올리면, AI가 내용을 분석하고 체크리스트를 자동으로 채워주는 기능.
+1. 📄 **계약서 꼼꼼히 살펴보기**: 사용자가 계약서 사진을 찍어 올리면, AI가 내용을 분석하고 분석 결과 리포트를 PDF나 메일로 발송해주는 기능.
 
-🚨 깡통전세 위험도 분석 (Risk Analysis): 매매가와 전세가를 입력하면, 위험도를 계산하여 직관적인 점수와 경고를 보여주는 기능.
+2. 🚨 **깡통전세 위험도 분석**: 매매가와 전세가를 입력하면, 주변 시세와의 비교를 통해 위험도를 계산하여 직관적인 점수와 경고를 보여주는 기능.
 
-e-mail 체크리스트 리포트 (Export): 분석된 결과를 깔끔한 리포트로 정리해 PDF나 메일로 발송해주는 기능.
+3. **체크리스트 리포트**: 체크리스트 목록과 진행 상황을 깔끔한 리포트로 정리해 PDF나 메일로 발송해주는 기능.
 
 여기에 RAGFlow를 활용한 **'어미새 챗봇'**을 더해, 사용자가 언제든 궁금한 법률 용어를 물어볼 수 있도록 구성했습니다.
 
-## 2. 아키텍처 설계: 복잡함에서 단순함으로
-기능이 정해진 후, 백엔드 로직을 어떻게 구성할지 고민했습니다. 초기에는 기능별로 웹훅을 7개나 만들려고 했지만, 이는 관리가 어렵고 비효율적이었습니다.
 
-우리는 데이터의 성격과 처리 방식에 따라 워크플로우를 3개의 마이크로 서비스(Micro-service) 형태로 통합/재편하는 **'3-Service Architecture'**를 설계했습니다.
+## 2. 아키텍처 설계
+각자 기능을 하나씩 맡아서 n8n 워크플로우를 테스트해보았다. 성공한 기능도, 보완이 필요한 기능도 있었다. 
+성공한 기능과 위에서 선정한 MVP 기능을 중심으로 *트리거 역할을 할 Webhook URL을 어떻게 나눌 것인지*, *세부적인 분기 처리는 어떻게 할 것인지*에 대해 고민해봤다.
+
+각자 테스트한 워크플로우는 Webhook Node에서 URL에 POST 요청을 보내는 방식으로 트리거가 설정되어 있었다. 이것들을 하나로 합치는 과정에서 기능별 워크플로우를 병렬로 나열하는 방법도 고려해보았고, 하나의 master Webhook URL을 설정하고 Switch Node를 활용해 분기처리하는 방법도 고려해봤다.
+
+우리는 데이터의 성격과 처리 방식에 따라 워크플로우를 3개의 마이크로 서비스(Micro-service) 형태로 통합/재편하는 **'3-Service Architecture'**를 설계했다.
 
 
 | **서비스 명칭**         | **Webhook URL (Endpoint)** | **역할**                                  | **데이터 통신 방식**  |
@@ -36,48 +38,45 @@ e-mail 체크리스트 리포트 (Export): 분석된 결과를 깔끔한 리포�
 | **② Document Service**  | `/document-service`        | 계약서 파일 업로드 및 AI 분석             | `Multipart/Form-Data` |
 | **③ Chat Service**      | `/chat-service`            | RAGFlow 챗봇 대화                         | `JSON`                |
 
-🛠️ 3-Service Architecture 상세
-### ① Checklist Service (논리 & 계산 담당)
-가장 빈번하게 호출되는 가벼운 로직들을 모았습니다. Switch 노드를 라우터(Router)로 활용하여, 프론트엔드에서 보내는 action 값에 따라 분기 처리하도록 설계했습니다.
+### 🛠️ 3-Service Architecture 상세
 
-Webhook URL: /checklist-service
+#### ① Checklist Service (논리 & 계산 담당)
+가장 빈번하게 호출되는 가벼운 로직들을 모았다. Switch 노드를 라우터(Router)로 활용하여, 프론트엔드에서 보내는 action 값에 따라 분기 처리하도록 설계했다.
 
-주요 기능 (Switch 분기):
+- Webhook URL: `/checklist-service`
 
-analyze_jeonse: 전세가율 계산 로직 (전세가/매매가 * 100) 및 위험도 판별.
+- 주요 기능 (Switch 분기):
+  - `analyze_jeonse` 깡통전세 위험도 분석: 전세가율 계산 로직 및 위험도 판별.
+  - `export_report` 리포트 발송: Supabase에서 데이터 조회 → HTML 생성 → PDF 변환 → 이메일 발송.
+  - `toggle_check`: 체크리스트 진행 상황 저장.
 
-export_report: Supabase에서 데이터 조회 → HTML 생성 → PDF 변환 → 이메일 발송.
+#### ② Document Service (파일 & AI 분석 담당)
+파일 업로드와 Vision AI 처리는 리소스를 많이 소모하고 시간이 걸린다. 이를 별도 서비스로 분리하여 안정성을 확보했다.
 
-toggle_check: 체크리스트 진행 상황 저장.
+- Webhook URL: `/document-service`
 
-### ② Document Service (파일 & AI 분석 담당)
-파일 업로드와 Vision AI 처리는 리소스를 많이 소모하고 시간이 걸립니다. 이를 별도 서비스로 분리하여 안정성을 확보했습니다.
+- 입력 데이터: Multipart/Form-Data (파일 포함)
 
-Webhook URL: /document-service
+- 주요 기능 (Switch 분기):
+  - DB 저장: 사용자가 입력한 파일을 S3에 업로드 및 DB 적재.
+  - 계약서 정밀 분석: 사용자가 입력한 파일을 OCR, LLM으로 분석하여 결과 리포트를 생성.
+  - 둥지 스캔하기: 사용자가 입력한 파일을 스캔하고 관련 체크리스트에 자동 체크.
+  - 프론트엔드 Respond: 진행 상황 (예: 처리 중입니다.)
 
-입력 데이터: Multipart/Form-Data (파일 포함)
+#### ③ Chat Service (대화형 AI 담당)
+RAGFlow와의 통신을 전담한다.
 
-프로세스:
+- Webhook URL: `/chat-service`
 
-AWS S3 노드: Supabase Storage(S3 호환)에 파일 업로드.
+- 프로세스: 사용자 질문 수신 → RAGFlow API 호출 (검색 및 답변 생성) → 답변 반환.
 
-Supabase: 파일 메타데이터 저장.
+- 주요 기능: 어미새 챗봇, 판례/법률 검색
 
-AI Agent (Vision): 계약서 이미지를 읽고 독소조항 및 중요 정보 추출.
-
-Code & DB: 추출된 정보를 바탕으로 체크리스트 상태 자동 업데이트(Upsert).
-
-### ③ Chat Service (대화형 AI 담당)
-RAGFlow와의 통신을 전담합니다. 구조는 가장 단순하지만, 서비스의 '지능'을 담당하는 핵심 파트입니다.
-
-Webhook URL: /chat-service
-
-프로세스: 사용자 질문 수신 → RAGFlow API 호출 (검색 및 답변 생성) → 답변 반환.
 
 ## 3. n8n 워크플로우 구현 패턴: "Router Pattern"
-저희가 사용한 핵심 패턴은 단일 웹훅 진입점 + Switch 분기입니다.
+n8n 워크플로우의 기본 뼈대에 **단일 웹훅 진입점 + Switch 분기** 방식을 도입했다.
 
-JavaScript
+```JavaScript
 
 // 프론트엔드 요청 예시
 axios.post('/checklist-service', {
@@ -85,19 +84,13 @@ axios.post('/checklist-service', {
   salePrice: 300000000,
   deposit: 250000000
 });
-n8n 내부에서는 Switch 노드가 body.action 값을 확인하여, '위험도 분석 로직'으로 보낼지, '이메일 발송 로직'으로 보낼지를 결정합니다. 이 구조 덕분에 API 엔드포인트 관리가 매우 수월해졌습니다.
+```
 
-## 4. 프론트엔드-백엔드 역할 분담
-n8n이 만능은 아닙니다. 보안이 중요하거나 단순한 CRUD는 프론트엔드에서 직접 처리하여 효율을 높였습니다.
-
-로그인/회원가입: n8n을 거치지 않고, React에서 Supabase Auth SDK를 직접 호출하여 보안성 강화.
-
-단순 데이터 조회: 마이페이지의 프로필 조회 등은 프론트에서 DB 직접 조회.
-
-복잡한 로직/외부 연동: 문서 분석, PDF 생성, 메일 발송 등은 n8n Webhook 호출.
-
+n8n 내부에서는 Switch 노드가 `body.action` 값을 확인하여, '위험도 분석 로직'으로 보낼지, '이메일 발송 로직'으로 보낼지를 결정한다. 이 구조 덕분에 API 엔드포인트 관리가 수월해졌다.
 
 ### Base Workflow
+3-Service Architecture와 Router Pattern을 토대로 Base Workflow를 생성했다.
+각자 개발한 기능을 이곳 base workflow에 합칠 예정인데, 우리 서비스는 하나의 기능의 볼륨이 큰 경우도 있기 때문에 너무 뚱뚱해진다 싶으면 3가지 Webhook을 각각의 Workflow로 독립시키기로 했다.
 
 ![base workflow](/assets/img/posts/2025-11-20-n8n-mvp-architecture/3.png)
 *base workflow*
@@ -114,6 +107,6 @@ n8n이 만능은 아닙니다. 보안이 중요하거나 단순한 CRUD는 프�
 ---
 
 ### 마치며
-MVP 범위를 명확히 하고, 이를 지원하기 위한 아키텍처를 **'데이터 성격'**에 맞춰 3가지로 구조화하니 개발의 방향이 명확해졌습니다. 이제 남은 해커톤 기간 동안 이 설계도를 바탕으로 **"아기새를 위한 튼튼한 둥지"**를 완성해 보겠습니다.
+MVP 범위를 명확히 하고, 이를 지원하기 위한 아키텍처를 '데이터 성격'에 맞춰 3가지로 구조화하니 개발의 방향이 명확해졌다. 이제 남은 해커톤 기간 동안 이 설계도를 바탕으로 **"아기새를 위한 튼튼한 둥지"**를 완성해 보겠다.
 
 팀 ASGI 화이팅! 🐣
