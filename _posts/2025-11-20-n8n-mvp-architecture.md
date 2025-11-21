@@ -2,7 +2,7 @@
 title: "[n8n] MVP 선정과 아키텍처 설계"
 date: 2025-11-20 09:00:00 +0900
 categories: [해커톤, n8n]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [n8n, nc/lc, ai, api, supabase, db, architecture, mvp]      # 태그 (소문자 권장)
+tags: [n8n, nc/lc, ai, api, supabase, db, architecture, mvp, react, backend]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-20-n8n-mvp-architecture/3.png # (선택) 대표 이미지
