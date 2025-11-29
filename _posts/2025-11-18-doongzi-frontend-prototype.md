@@ -1,8 +1,8 @@
 ---
-title: "[FE] Figma Make로 프로토타입 구현하기"
+title: "[둥지] Figma Make로 프로토타입 구현하기"
 date: 2025-11-18 09:00:00 +0900
-categories: [해커톤, 개발일지]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [frontend, uiux, figma, design, prototype, ai]      # 태그 (소문자 권장)
+categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [Figma, Prototype, UI/UX, AI Design]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-18-frontend-prototype/11.png # (선택) 대표 이미지

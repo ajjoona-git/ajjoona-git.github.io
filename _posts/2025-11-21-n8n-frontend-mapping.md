@@ -1,8 +1,8 @@
 ---
-title: "[n8n] 프론트엔드와 n8n 매핑 테스트"
+title: "[둥지] 프론트엔드와 n8n 매핑 테스트"
 date: 2025-11-21 09:00:00 +0900
-categories: [해커톤, n8n]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [n8n, nc/lc, ai, react, backend, frontend]      # 태그 (소문자 권장)
+categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [React, n8n, Integration, Frontend]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-21-n8n-frontend-mapping/1.png # (선택) 대표 이미지

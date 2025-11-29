@@ -1,8 +1,8 @@
 ---
-title: "[FE] 프로토타입 제작기 (feat. 피그마 MCP, gemini-CLI)"
+title: "[쉽길] 프로토타입 제작기 (feat. 피그마 MCP, gemini-CLI)"
 date: 2025-09-21 16:00:00 +0900
-categories: [프로젝트 - 쉽길, 개발일지]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [frontend, uiux, figma, mcp, design, prototype, gemini-cli, ]      # 태그 (소문자 권장)
+categories: [Projects, 쉽길]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [Figma, Prototype, Gemini-CLI, MCP]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/posts/my-post-banner.png # (선택) 대표 이미지

@@ -1,8 +1,8 @@
 ---
-title: "[DOCS] 로컬 서버 초기 설정 가이드"
+title: "[쉽길] 로컬 서버 초기 설정 가이드"
 date: 2025-11-18 09:00:00 +0900
-categories: [프로젝트 - 쉽길, GUIDE]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [env, github, db, git, guide]      # 태그 (소문자 권장)
+categories: [Projects, 쉽길]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [Environment, Python, DB, Guide]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 이미지
