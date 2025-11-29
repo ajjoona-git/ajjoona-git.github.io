@@ -1,5 +1,5 @@
 ---
-title: "[둥지] AI Agent와 MCP가 뭐가 다른거지?"
+title: "[둥지] 둥지 스캔하기의 AI Agent화"
 date: 2025-11-22 09:00:00 +0900
 categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [n8n, AIAgent, MCP, Backend, Automation]      # 태그 (소문자 권장)
