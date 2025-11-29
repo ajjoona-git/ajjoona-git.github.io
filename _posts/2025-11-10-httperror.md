@@ -2,7 +2,7 @@
 title: "HttpError: Not Found 이것 뭐에요?"
 date: 2025-11-10 09:00:00 +0900
 categories: [Blog, Troubleshooting]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [GitHub Pages, HttpError, Deploy, Debug]      # 태그 (소문자 권장)
+tags: [GitHubPages, HttpError, Deploy, Debug]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-10-httperror/7.png # (선택) 대표 이미지

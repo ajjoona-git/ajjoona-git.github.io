@@ -1,5 +1,5 @@
 ---
-title: "마크다운 스타일 가이드 (Markdown Style Guide)"
+title: "마크다운 스타일 가이드"
 date: 2025-11-05 09:00:00 +0900
 categories: [Blog, Config]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [Markdown, Style, Guide]      # 태그 (소문자 권장)
