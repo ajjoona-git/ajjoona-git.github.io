@@ -5,7 +5,7 @@ categories: [Projects, 쉽길]  # 계층적 카테고리 지원 [대분류, 소�
 tags: [Environment, Python, DB, Guide]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
-# image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 이미지
+image: /assets/img/posts/2025-11-18-local-initialize/3.png # (선택) 대표 이미지
 ---
 
 쉽길 프로젝트를 기준으로, 로컬 서버에서 개발 환경을 초기화하는 과정이다.

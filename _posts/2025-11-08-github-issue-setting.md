@@ -5,7 +5,7 @@ categories: [Tech, DevOps]  # 계층적 카테고리 지원 [대분류, 소분�
 tags: [GitHub, IssueTemplate, Collaboration, Label]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
-# image: /assets/img/my-post-banner.png # (선택) 대표 이미지
+image: /assets/img/posts/2025-11-08-github-issue-setting/12.png # (선택) 대표 이미지
 ---
 
 어제 관통 프로젝트의 기획을 시작하면서 한 가지 다짐한 것이 있다면,
