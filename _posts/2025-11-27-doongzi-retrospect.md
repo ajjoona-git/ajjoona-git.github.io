@@ -24,7 +24,7 @@ image: /assets/img/posts/2025-11-27-doongzi-retrospect/2.png # (선택) 대표 �
 일반적인 REST API 서버와 달리, n8n은 하나의 워크플로우 당 단 하나의 URL만 생성된다. 하지만 우리 서비스는 PDF 생성, 이메일 발송, 깡통전세 위험도 분석 등 체크리스트별로 각 액션버튼을 가지고 있고, 이를 구분해서 처리해야 했다. URL 경로(Path)로 리소스를 구분할 수 없는 상황에서, 요청 본문(Body)에 ActionType이라는 식별자를 필수적으로 포함시키는 패턴을 생각해냈다. 프론트엔드에서 TypeScript 리터럴 타입으로 ActionType을 정의하고, 백엔드에서는 Switch 노드가 이 값을 기준으로 로직을 분기하도록 설계했다. 이를 통해 단일 엔드포인트 환경에서도 다형성을 가진 API 구조를 구축할 수 있었다. 또한 개발 도중 빈번했던 프론트-백 간의 규격 불일치 문제인 '코드 표류(Code Drift)' 현상도 효과적으로 방지할 수 있었다.
 
 URL은 크게 `/checklist`, `/scan`, `/chatbot` 3가지로 구분했다. 자세한 내용은 아래 포스트를 참고 바란다.
-{% linkpreview "https://ajjoona-git.github.io/posts/mvp-architecture/" %}
+{% linkpreview "https://ajjoona-git.github.io/posts/n8n-mvp-architecture/" %}
 
 첫 날 밤에 계약서 꼼꼼히 살펴보기(`analyzeDocuments`)와 둥지 스캔하기(`scanDocuments`) 기능에 내부적으로 혼선이 생겨서 골치가 아팠다. 두 기능의 차이점을 강조해서 PRD를 작성해놓은 상황이었는데, 추가적인 문서들에 반영되지 않았던 것인지, 프론트 담당 팀원이 착각을 하는 바람에 전부 꼬였었다. 여기에, 자리를 비운 와중 문서 종류별 정밀 분석을 PDF, 메일로 내보내기 액션버튼을 각각 만들었더라. 동일 기능인지라 하나로 통합한 후, docType 파라미터를 추가하는 것이 경제적인 설계라고 판단해서 이 역시 수정해야 했다.
 
