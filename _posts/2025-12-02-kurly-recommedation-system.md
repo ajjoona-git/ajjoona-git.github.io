@@ -8,8 +8,6 @@ comments: true                         # 이 게시글에 Giscus 댓글 창 표�
 image: /assets/img/posts/2025-12-02-kurly-recommedation-system/3.png # (선택) 대표 이미지
 ---
 
-*Kurly Tech Blog | 개인화 추천 시스템 1편 - 유저의 행동은 “언어”일까? : Collaborative Embedding 구축기 (feat. Knowledge Distillation)*
-{% linkpreview "https://helloworld.kurly.com/blog/personalized-recommendation-v1/" %}
 
 ### 상품과 유저를 표현하는 공간
 
@@ -75,3 +73,9 @@ Retrieval Head가 빠른 반면에 성능이 떨어지고, Generative Head는 �
 
 ![컬리 앱의 추천 상품](/assets/img/posts/2025-12-02-kurly-recommedation-system/1.png)
 *컬리 앱의 추천 상품*
+
+---
+
+### 레퍼런스
+
+[Kurly Tech Blog | 개인화 추천 시스템 1편 - 유저의 행동은 “언어”일까? : Collaborative Embedding 구축기 (feat. Knowledge Distillation)]("https://helloworld.kurly.com/blog/personalized-recommendation-v1/")
