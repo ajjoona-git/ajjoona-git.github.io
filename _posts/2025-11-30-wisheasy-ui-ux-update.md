@@ -2,7 +2,7 @@
 title: "[쉽길] 역 정보 및 경로 안내 UI/UX 대개편"
 date: 2025-11-30 09:00:00 +0900
 categories: [Projects, 쉽길]
-tags: [Frontend, Backend, UI/UX, API, Refactoring]
+tags: [Frontend, Backend, UI/UX, API, Refactoring, Troubleshooting]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-30-wisheasy-ui-ux-update/9.png # (선택) 대표 이미지

@@ -2,7 +2,7 @@
 title: "[둥지] 둥지 스캔하기의 AI Agent화"
 date: 2025-11-22 09:00:00 +0900
 categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [n8n, AIAgent, MCP, Backend, Automation]      # 태그 (소문자 권장)
+tags: [n8n, Agent, MCP, Backend, Automation]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-22-n8n-aiagent-mcp/2.png # (선택) 대표 이미지

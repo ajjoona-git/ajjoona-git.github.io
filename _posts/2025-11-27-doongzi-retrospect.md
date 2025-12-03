@@ -2,7 +2,7 @@
 title: "[둥지] 2박 3일 해커톤 회고"
 date: 2025-11-27 09:00:00 +0900
 categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [Retrospect, Hackathon, n8n, React, API]     # 태그 (소문자 권장)
+tags: [Retrospect, Hackathon, n8n, React, API, Troubleshooting]     # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-27-doongzi-retrospect/2.png # (선택) 대표 이미지
