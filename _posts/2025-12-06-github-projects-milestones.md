@@ -2,7 +2,7 @@
 title: "GitHub PR 템플릿 및 마일스톤 설정"
 date: 2025-12-06 09:00:00 +0900
 categories: [Tech, DevOps]
-tags: [GitHub, PM, PRTemplate, Milestone, Automation]
+tags: [GitHub, PM, PRTemplate, Milestone, Automation, Collaboration]
 toc: true 
 comments: true 
 image: /assets/img/posts/2025-12-06-github-projects-milestones/1.png
