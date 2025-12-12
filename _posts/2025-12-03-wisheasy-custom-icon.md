@@ -6,6 +6,7 @@ tags: [Frontend, CSS, UI/UX, FontAwesome, Troubleshooting]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-03-wisheasy-custom-icon/2.png # (선택) 대표 이미지
+description: 무료 아이콘 라이브러리에 에스컬레이터 아이콘이 없는 문제를 CSS background-image를 활용한 커스텀 클래스로 해결하여 UX를 개선했습니다.
 ---
 
 

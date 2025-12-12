@@ -3,10 +3,10 @@ title: "블로그 검색 노출을 위한 구글 & 네이버 서치 콘솔 등�
 date: 2025-12-11 09:00:00 +0900
 categories: [Blog, Config]
 tags: [Jekyll, Chirpy, SEO, GoogleSearchConsole, NaverSearchAdvisor, Sitemap]
-description: "Jekyll Chirpy 블로그의 검색 유입을 늘리기 위해 구글 서치 콘솔과 네이버 서치어드바이저에 사이트를 등록하고 사이트맵(sitemap.xml)을 제출하는 방법을 상세히 다룹니다."
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-11-blog-seo-google-naver-registration/6.png
+description: Jekyll Chirpy 블로그의 검색 유입을 늘리기 위해 구글 서치 콘솔과 네이버 서치어드바이저에 사이트를 등록하고 사이트맵을 제출하는 방법을 상세히 다룹니다.
 ---
 
 내가 쓴 블로그가 많은 사람들에게 읽혔으면 했는데, 구글에 검색해도 안 나오는 것이 아닌가? 찾아보니, 블로그를 아무리 잘 만들어도 **검색 엔진(Google, Naver 등)에 등록**하지 않으면 사람들이 검색해서 들어올 수 없다고 한다. 현재 사용 중인 **Chirpy 테마**는 SEO 기능이 잘 갖춰져 있어서, 설정 파일만 조금 수정하고 검색 사이트에 등록만 하면 된다.

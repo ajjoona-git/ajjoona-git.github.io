@@ -6,6 +6,7 @@ tags: [React, n8n, Integration, Frontend, Troubleshooting]      # 태그 (소문
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-21-n8n-frontend-mapping/1.png # (선택) 대표 이미지
+description: React 프론트엔드의 버튼 액션과 n8n 워크플로우(Switch, If 노드)를 연동하며 발생한 논리적 모순을 해결하고 통신을 최적화합니다.
 ---
 
 프론트엔드의 버튼 클릭과 n8n의 로직을 매핑하는 것을 테스트해봤다.

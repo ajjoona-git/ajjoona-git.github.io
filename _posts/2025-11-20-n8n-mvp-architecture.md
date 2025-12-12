@@ -6,6 +6,7 @@ tags: [Architecture, MVP, n8n, RAG]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-20-n8n-mvp-architecture/3.png # (선택) 대표 이미지
+description: 둥지 서비스의 MVP 기능을 확정하고, 데이터 성격에 따라 3가지 마이크로 서비스(Checklist, Document, Chat)로 나눈 n8n 백엔드 아키텍처를 설계합니다.
 ---
 
 앞서 피그마로 디자인한 프로토타입을 실제 동작하는 서비스로 구현하기 위해 고민했던 MVP 선정 과정과 n8n 기반의 백엔드 아키텍처 설계 전략을 공유합니다.

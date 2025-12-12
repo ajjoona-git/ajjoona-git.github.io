@@ -6,6 +6,7 @@ tags: [Django, JavaScript, Architecture, API, Frontend, Backend, DOM, Session, C
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/posts/2025-12-04-async-settimeout/cover.png
+description: SSR(Django)과 CSR(JavaScript)의 장단점을 비교하고, 쉽길 프로젝트를 위한 하이브리드 아키텍처와 API 명세서 기반 협업 방식을 설계합니다.
 ---
 
 ## 자바스크립트 (JavaScript)

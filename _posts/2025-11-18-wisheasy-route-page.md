@@ -6,6 +6,7 @@ tags: [Frontend, CSS, UI/UX, Refactoring, JavaScript]
 toc: true 
 comments: true 
 image: /assets/img/posts/2025-11-18-wisheasy-route-page/6.png
+description: 경로 안내 화면의 가독성을 높이기 위해 Flex 레이아웃을 Grid로 변경하고, Alert 창을 모달(Modal)로 교체하여 사용자 경험을 개선했습니다.
 ---
 
 경로 안내 페이지의 전달력과 자잘한 버그 박멸을 위해 디자인을 수정했다.

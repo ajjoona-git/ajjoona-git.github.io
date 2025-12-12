@@ -6,6 +6,7 @@ tags: [Environment, Python, DB, Guide]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-18-local-initialize/3.png # (선택) 대표 이미지
+description: 쉽길 프로젝트 팀원을 위한 Python 가상환경, 환경 변수(.env), DB 마이그레이션 등 로컬 개발 환경 초기 설정 가이드입니다.
 ---
 
 쉽길 프로젝트를 기준으로, 로컬 서버에서 개발 환경을 초기화하는 과정이다.

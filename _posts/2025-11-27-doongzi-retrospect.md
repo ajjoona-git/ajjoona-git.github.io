@@ -6,6 +6,7 @@ tags: [Retrospect, Hackathon, n8n, React, API, Troubleshooting]     # 태그 (�
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-27-doongzi-retrospect/2.png # (선택) 대표 이미지
+description: n8n 웹훅의 단일 엔드포인트 한계 극복, 대용량 파일 분석을 위한 비동기 처리 등 해커톤 기간 동안의 치열한 기술적 트러블슈팅과 성장 기록입니다.
 ---
 
 

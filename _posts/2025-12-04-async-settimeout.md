@@ -1,11 +1,12 @@
 ---
-title: "setTimeout과 이벤트 루프 완벽 정리"
+title: "자바스크립트 비동기 처리와 setTimeout의 동작 원리"
 date: 2025-12-04 09:00:00 +0900
 categories: [Tech, JavaScript]
 tags: [JavaScript, EventLoop, Asynchronous, SetTimeout, Vue.js, Debouncing]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-04-async-settimeout/cover.png
+description: 자바스크립트의 싱글 스레드 특성과 이벤트 루프(Event Loop)의 관계를 파헤치고, setTimeout을 활용한 디바운싱 구현 원리를 설명합니다.
 ---
 
 # 자바스크립트는 싱글 스레드인데 어떻게 동시에 여러 일을 할까?

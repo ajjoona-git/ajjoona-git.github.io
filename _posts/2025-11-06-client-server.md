@@ -6,6 +6,7 @@ tags: [WebServer, Nginx, Gunicorn, WSGI, Django]      # 태그 (소문자 권장
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-06-client-server/1.jpeg # (선택) 대표 이미지
+description: 웹 서버(Nginx)와 WAS(Gunicorn), 그리고 애플리케이션(Django)의 상호작용과 WSGI의 개념을 정리하여 웹 동작 원리를 파헤칩니다.
 ---
 
 ## 서버란 무엇인가?

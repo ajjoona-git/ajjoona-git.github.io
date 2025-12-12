@@ -6,6 +6,7 @@ tags: [Retrospect, Frontend, UI/UX, Troubleshooting, Optimization, Django, Colla
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/posts/2025-11-23-n8n-registry/4.png # (선택) 대표 이미지
+description: 쉽길 프로젝트를 마무리하며 bfcache 이슈 해결, 렌더링 최적화 등 기술적 성과와 사용자 중심의 UI/UX 개선 과정을 회고합니다.
 ---
 
 # "기획의 의도를 기술로 실현하고, 팀과 소통하여 약속된 마감을 사수하는 프론트엔드 개발자"

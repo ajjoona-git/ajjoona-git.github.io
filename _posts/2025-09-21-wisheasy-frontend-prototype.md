@@ -6,6 +6,7 @@ tags: [Figma, Prototype, Gemini-CLI, MCP]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-09-21-frontend-prototype/13.png # (선택) 대표 이미지
+description: Figma MCP, Gemini CLI, Cursor 등을 활용하여 쉽길 프로젝트의 초기 프로토타입을 제작하고 스타일 가이드를 수립한 과정입니다.
 ---
 
 *이전 게시글 보고오기 >>*

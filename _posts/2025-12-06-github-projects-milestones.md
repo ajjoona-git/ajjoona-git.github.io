@@ -6,6 +6,7 @@ tags: [GitHub, PM, PRTemplate, Milestone, Automation, Collaboration]
 toc: true 
 comments: true 
 image: /assets/img/posts/2025-12-06-github-projects-milestones/1.png
+description: GitHub Projects 보드와 마일스톤, PR 템플릿을 설정하여 개발 일정을 시각화하고 워크플로우를 자동화하는 협업 환경 구축 가이드입니다.
 ---
 
 *이전 게시글 보고오기 >>*

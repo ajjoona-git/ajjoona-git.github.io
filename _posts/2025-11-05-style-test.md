@@ -6,6 +6,7 @@ tags: [Markdown, Style, Guide]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 # image: /assets/img/my-post-banner.png # (선택) 대표 이미지
+description: 블로그 포스팅 시 참고할 Markdown 문법과 Chirpy 테마의 스타일 적용 예시를 정리한 가이드 문서입니다.
 ---
 
 
