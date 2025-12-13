@@ -6,7 +6,7 @@ tags: [n8n, Agent, MCP, Backend, Automation]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-22-n8n-aiagent-mcp/2.png # (선택) 대표 이미지
-description: AI Agent와 MCP(Model Context Protocol)의 개념적 차이를 이해하고, 이를 둥지 서비스의 핵심 기능인 '둥지 스캔하기'에 적용한 설계를 다룹니다.
+description: "AI Agent와 MCP(Model Context Protocol)의 개념적 차이를 이해하고, 이를 둥지 서비스의 핵심 기능인 '둥지 스캔하기'에 적용한 설계를 다룹니다."
 ---
 
 '둥지: 집 찾는 아기새' 서비스를 기획하며 n8n, Supabase, 그리고 MCP(Model Context Protocol)를 활용해 백엔드 로직을 설계했다. 특히 AI Agent가 외부 도구를 어떻게 호출하고 판단하는지, 그 과정에서 **MCP Client Node**의 역할이 무엇인지에 대한 기술적 정의와 워크플로우 설계 과정을 정리해보았다.

@@ -6,7 +6,7 @@ tags: [Frontend, Backend, UI/UX, API, Refactoring, Troubleshooting]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-30-wisheasy-ui-ux-update/9.png # (선택) 대표 이미지
-description: 쉽길 프로젝트의 역 정보 조회 및 경로 안내 페이지의 UI를 지하철 노선도 스타일로 직관적으로 개편하고, 실제 API를 연동한 개발 일지입니다.
+description: "쉽길 프로젝트의 역 정보 조회 및 경로 안내 페이지의 UI를 지하철 노선도 스타일로 직관적으로 개편하고, 실제 API를 연동한 개발 일지입니다."
 ---
 
 ## 📝 [개발 일지] 역 정보 및 경로 안내 서비스 고도화

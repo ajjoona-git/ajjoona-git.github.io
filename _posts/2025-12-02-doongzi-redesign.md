@@ -6,7 +6,7 @@ tags: [UI/UX, Design, Frontend, Refactoring, Portfolio]     # 태그 (소문자 
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-02-doongzi-redesign/16.png # (선택) 대표 이미지
-description: 포트폴리오의 완성도를 높이기 위해 둥지 서비스의 메인 페이지 레이아웃과 컬러 팔레트를 사용자 친화적으로 전면 리디자인했습니다.
+description: "포트폴리오의 완성도를 높이기 위해 둥지 서비스의 메인 페이지 레이아웃과 컬러 팔레트를 사용자 친화적으로 전면 리디자인했습니다."
 ---
 
 

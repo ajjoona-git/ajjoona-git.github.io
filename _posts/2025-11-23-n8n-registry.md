@@ -6,7 +6,7 @@ tags: [n8n, API, Automation, Backend, CODEF]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-23-n8n-registry/4.png # (선택) 대표 이미지
-description: n8n과 CODEF API를 활용하여 등기부등본 조회 및 발급 프로세스를 자동화하고, 수수료 결제 문제를 해결하기 위한 로직을 설계합니다.
+description: "n8n과 CODEF API를 활용하여 등기부등본 조회 및 발급 프로세스를 자동화하고, 수수료 결제 문제를 해결하기 위한 로직을 설계합니다."
 ---
 
 체크리스트 액션 버튼 중 하나로 ‘등기부등본 발급하기’를 구현해보고자 한다.

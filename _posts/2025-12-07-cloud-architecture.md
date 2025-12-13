@@ -6,7 +6,7 @@ tags: [CloudArchitecture, IaaS, PaaS, AWS, Serverless, Resilience, DevOps]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-07-cloud-architecture/1.png
-description: IaaS와 PaaS의 차이를 이해하고, AWS 및 Cloudflare 등 최근 대형 장애 사례를 통해 회복 탄력성(Resilience) 있는 클라우드 아키텍처 설계를 고찰합니다.
+description: "IaaS와 PaaS의 차이를 이해하고, AWS 및 Cloudflare 등 최근 대형 장애 사례를 통해 회복 탄력성(Resilience) 있는 클라우드 아키텍처 설계를 고찰합니다."
 ---
 
 ## 클라우드 아키텍처가 뭔데?

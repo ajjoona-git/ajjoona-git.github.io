@@ -2,7 +2,7 @@
 title: "PR이 꼬였을 때: Cherry-pick으로 커밋 분리하고 브랜치 복구하기"
 date: 2025-12-10 09:00:00 +0900
 categories: [Tech, Git]
-tags: [Git, CherryPick, PullRequest, BranchStrategy, Troubleshooting, Workflow]
+tags: [Git, GitHub, CherryPick, PullRequest, BranchStrategy, Troubleshooting, Workflow]
 description: "하나의 브랜치에서 두 가지 작업을 동시에 진행하여 PR이 섞였을 때, git cherry-pick과 reset 명령어를 활용하여 특정 커밋만 새로운 브랜치로 옮기고 기존 브랜치를 원복하는 방법을 단계별로 소개합니다."
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true    

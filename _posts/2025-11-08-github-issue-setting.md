@@ -2,11 +2,11 @@
 title: "GitHub Issue 템플릿 설정하기"
 date: 2025-11-08 09:00:00 +0900
 categories: [Tech, DevOps]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [GitHub, IssueTemplate, Collaboration, Label, PM]      # 태그 (소문자 권장)
+tags: [GitHub, Issue, Template, Collaboration, Label, PM]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-08-github-issue-setting/12.png # (선택) 대표 이미지
-description: GitHub Issue 템플릿(Bug, Feat 등)과 라벨 시스템을 체계적으로 구축하여 프로젝트 협업 효율을 높이는 방법을 소개합니다.
+description: "GitHub Issue 템플릿(Bug, Feat 등)과 라벨 시스템을 체계적으로 구축하여 프로젝트 협업 효율을 높이는 방법을 소개합니다."
 ---
 
 어제 관통 프로젝트의 기획을 시작하면서 한 가지 다짐한 것이 있다면,

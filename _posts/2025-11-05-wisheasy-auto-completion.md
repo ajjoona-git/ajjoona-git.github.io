@@ -6,7 +6,7 @@ tags: [Django, JavaScript, Debouncing, AutoCompletion, UI/UX, Troubleshooting, F
 toc: true  
 comments: true 
 image: /assets/img/posts/2025-11-05-wisheasy-auto-completion/1.png
-description: 서버 부하를 줄이는 Debouncing 기술과 사용자 경험을 고려한 지하철 역 검색 자동완성 기능을 구현하고 트러블슈팅한 기록입니다.
+description: "서버 부하를 줄이는 Debouncing 기술과 사용자 경험을 고려한 지하철 역 검색 자동완성 기능을 구현하고 트러블슈팅한 기록입니다."
 ---
 
 

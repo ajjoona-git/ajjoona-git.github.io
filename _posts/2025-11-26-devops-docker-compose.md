@@ -6,7 +6,7 @@ tags: [DevOps, Docker, DockerCompose, Ubuntu, React, Nginx, Deployment]      # �
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-26-devops-docker-compose/cover.png # (선택) 대표 이미지
-description: AWS EC2(Ubuntu) 환경에서 Docker Compose와 Nginx를 사용하여 React 애플리케이션을 수동으로 빌드하고 배포한 과정을 정리했습니다.
+description: "AWS EC2(Ubuntu) 환경에서 Docker Compose와 Nginx를 사용하여 React 애플리케이션을 수동으로 빌드하고 배포한 과정을 정리했습니다."
 ---
 
 Figma에서 디자인된 UI를 코드로 변환하여 React 앱을 만들고, 이를 AWS EC2(Ubuntu) 서버에 배포하여 둥지 서비스를 운영하고 있다. 오늘은 개발 초기 단계에서 사용했던 **Docker Compose 기반의 배포 워크플로우**를 정리해 보려 한다.

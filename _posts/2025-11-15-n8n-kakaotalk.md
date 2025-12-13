@@ -6,7 +6,7 @@ tags: [n8n, KakaoAPI, OAuth, NoCode]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 이미지
-description: 노코드 자동화 툴 n8n과 카카오톡 REST API를 연동하여 '나에게 메시지 보내기' 기능을 구현하고 OAuth 인증 과정을 다룹니다.
+description: "노코드 자동화 툴 n8n과 카카오톡 REST API를 연동하여 '나에게 메시지 보내기' 기능을 구현하고 OAuth 인증 과정을 다룹니다."
 ---
 
 본격적으로 n8n을 써보기에 앞서서, 간단한 기능을 구현해보았다.

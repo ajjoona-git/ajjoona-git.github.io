@@ -6,7 +6,7 @@ tags: [n8n, Supabase, PostgreSQL, Automation]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-19-n8n-checklist/cover.png # (선택) 대표 이미지
-description: n8n 워크플로우를 통해 Supabase 데이터를 조회하고, HTML 리포트를 생성하여 Gmail로 발송하는 자동화 로직을 구현합니다.
+description: "n8n 워크플로우를 통해 Supabase 데이터를 조회하고, HTML 리포트를 생성하여 Gmail로 발송하는 자동화 로직을 구현합니다."
 ---
 
 Gemini 3 출시 기념, 나의 멘토 Gemini와 함께 n8n + Supabase + 프론트엔드 (React) 연결까지 테스트해봤다.

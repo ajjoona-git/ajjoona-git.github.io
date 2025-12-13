@@ -6,7 +6,7 @@ tags: [Insight, Recommendation, ML, Kurly, DataEngineering, Embedding, Knowledge
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-12-02-kurly-recommedation-system/3.png # (선택) 대표 이미지
-description: 마켓컬리의 추천 시스템(Semantic ID, Dual-Head Architecture) 기술 블로그를 분석하고, 지식 증류와 데이터 엔지니어링 전략을 학습합니다.
+description: "마켓컬리의 추천 시스템(Semantic ID, Dual-Head Architecture) 기술 블로그를 분석하고, 지식 증류와 데이터 엔지니어링 전략을 학습합니다."
 ---
 
 

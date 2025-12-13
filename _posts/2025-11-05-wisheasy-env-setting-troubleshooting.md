@@ -5,7 +5,7 @@ categories: [Projects, 쉽길]
 tags: [Django, Troubleshooting, Debug, Environment, Configuration, SecretKey]
 toc: true 
 comments: true 
-description: Django 로컬 개발 환경 세팅 중 발생한 환경 변수(Secret Key) 설정 오류의 원인을 분석하고 해결하는 과정을 다룹니다.
+description: "Django 로컬 개발 환경 세팅 중 발생한 환경 변수(Secret Key) 설정 오류의 원인을 분석하고 해결하는 과정을 다룹니다."
 ---
 
 로컬 서버 개발환경 세팅하는 과정에서 오류가 발생했습니다.

@@ -6,7 +6,7 @@ tags: [Figma, UI/UX, MCP, Frontend]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-09-17-frontend-figma/1.png # (선택) 대표 이미지
-description: 프론트엔드 개발을 위해 Figma 플러그인과 MCP 활용법을 익히고, UI 디자인 워크플로우를 기획하는 과정을 기록했습니다.
+description: "프론트엔드 개발을 위해 Figma 플러그인과 MCP 활용법을 익히고, UI 디자인 워크플로우를 기획하는 과정을 기록했습니다."
 ---
 
 이번 쉽길 프로젝트는 '전문가 제도'를 기반으로 진행한다.
