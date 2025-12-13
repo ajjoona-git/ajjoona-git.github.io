@@ -1,7 +1,7 @@
 ---
 title: "서버는 어떻게 클라이언트의 요청에 응답할까?"
 date: 2025-11-06 16:00:00 +0900
-categories: [Tech, CS]  # 계층적 카테고리 지원 [대분류, 소분류]
+categories: [Tech, Web]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [WebServer, Nginx, Gunicorn, WSGI, Django]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

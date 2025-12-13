@@ -1,8 +1,8 @@
 ---
 title: "n8n으로 카카오톡 자동 메시지 구현하기"
 date: 2025-11-15 09:00:00 +0900
-categories: [Tech, Automation]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [n8n, KakaoAPI, OAuth, NoCode]      # 태그 (소문자 권장)
+categories: [Tech, Web]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [n8n, Kakao, API, OAuth, NoCode, Automation]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-15-n8n-kakaotalk/cover.png # (선택) 대표 이미지

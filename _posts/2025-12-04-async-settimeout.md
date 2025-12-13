@@ -1,7 +1,7 @@
 ---
 title: "자바스크립트 비동기 처리와 setTimeout의 동작 원리"
 date: 2025-12-04 09:00:00 +0900
-categories: [Tech, JavaScript]
+categories: [Tech, Web]
 tags: [JavaScript, EventLoop, Asynchronous, SetTimeout, Vue.js, Debouncing]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

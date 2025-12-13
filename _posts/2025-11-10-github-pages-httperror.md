@@ -1,12 +1,12 @@
 ---
-title: "HttpError: Not Found 이것 뭐에요?"
+title: "GitHub Pages 배포 실패 해결: HttpError Not Found"
 date: 2025-11-10 09:00:00 +0900
-categories: [Blog, Troubleshooting]  # 계층적 카테고리 지원 [대분류, 소분류]
-tags: [GitHubPages, HttpError, Deploy, Debug, Troubleshooting]      # 태그 (소문자 권장)
+categories: [Tech, DevOps]  # 계층적 카테고리 지원 [대분류, 소분류]
+tags: [GitHub, GitHubPages, GitHubActions, HttpError, Deploy, Debug, Troubleshooting]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-10-httperror/7.png # (선택) 대표 이미지
-description: "GitHub Pages 배포 과정에서 발생한 HttpError Not Found(404) 오류를 GitHub Actions 설정 변경을 통해 해결한 경험을 공유합니다."
+description: "GitHub Pages 배포 과정에서 발생한 HttpError: Not Found(404) 오류를 GitHub Actions 설정 변경을 통해 해결한 경험을 공유합니다."
 ---
 
 ### 어느날 갑자기 블로그가 없어졌다..?

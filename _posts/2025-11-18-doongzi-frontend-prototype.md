@@ -6,7 +6,7 @@ tags: [Figma, FigmaMake, Prototype, UI/UX, Design]      # 태그 (소문자 권�
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
 image: /assets/img/posts/2025-11-18-frontend-prototype/11.png # (선택) 대표 이미지
-description: "\'집 찾는 어미새\' 컨셉에 맞춰 Figma Make를 활용해 둥지 프로젝트의 UI/UX 프로토타입을 제작하고 디자인을 고도화한 과정입니다."
+description: "'집 찾는 어미새' 컨셉에 맞춰 Figma Make를 활용해 둥지 프로젝트의 UI/UX 프로토타입을 제작하고 디자인을 고도화한 과정입니다."
 ---
 
 기획서에 포함할 우리 서비스의 프로토타입을 만들기 위해 Figma Make를 갈궈봤다.

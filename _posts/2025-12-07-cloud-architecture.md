@@ -1,7 +1,7 @@
 ---
 title: "클라우드 아키텍처의 이해와 서비스 장애 대응 전략 (IaaS vs PaaS)"
 date: 2025-12-07 09:00:00 +0900
-categories: [Tech, Cloud]
+categories: [Tech, DevOps]
 tags: [CloudArchitecture, IaaS, PaaS, AWS, Serverless, Resilience, DevOps]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
