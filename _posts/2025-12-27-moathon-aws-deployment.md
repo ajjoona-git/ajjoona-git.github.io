@@ -568,10 +568,6 @@ github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
 - CORS 설정을 통해 프론트엔드와 백엔드의 보안 장벽을 뚫고 통신을 성공시켰다.
 - `loaddata`를 통해 로컬에 있던 데이터(뱃지, 금융상품 등)를 서버 DB로 이관했다.
 
-{% linkpreview "http://moathon-client-dist.s3-website.ap-northeast-2.amazonaws.com/" %}
-
-[모아톤 보러가기](http://moathon-client-dist.s3-website.ap-northeast-2.amazonaws.com/)
-
 ### 다음은?
 
 이제 https:// 로 시작하는 도메인을 사용하기 위해, CloudFront를 도입해봐야겠다.
