@@ -13,36 +13,6 @@ description: "AWS EC2(Ubuntu)에 Django와 Nginx, Gunicorn을 연동하여 백�
 
 다음은 Nginx를 리버스 프록시로 두고 Gunicorn을 WSGI 서버로 사용하여 안정적인 서비스를 구축한 과정이다.
 
-```
-graph TD
-    User((사용자))
-    
-    subgraph AWS Cloud
-        subgraph Frontend Hosting
-            S3[S3 Bucket - Vue 빌드 파일]
-        end
-        
-        subgraph Backend Infrastructure
-            subgraph EC2 Instance
-                Nginx[Nginx - Web Server]
-                Gunicorn[Gunicorn - WSGI]
-                Django[Django App]
-            end
-            
-            RDS[(AWS RDS - PostgreSQL)]
-        end
-    end
-
-    %% 현재 구현은 HTTPS가 아닌 HTTP이며, S3 엔드포인트로 직접 접속한다.
-    User -- "http://moathon-client... (접속)" --> S3
-    S3 -- "정적 파일 제공" --> User
-    
-    User -- "API 요청 (http://EC2_IP/api/)" --> Nginx
-    Nginx -- "Reverse Proxy" --> Gunicorn
-    Gunicorn -- "Python 코드 실행" --> Django
-    Django -- "데이터 조회" --> RDS
-```
-
 ## 1. AWS EC2 인스턴스 생성 및 접속
 
 ### 1-1. EC2 인스턴스 시작
