@@ -43,23 +43,23 @@ graph TD
     Django -- "데이터 조회" --> RDS
 ```
 
-# 1. AWS EC2 인스턴스 생성 및 접속
+## 1. AWS EC2 인스턴스 생성 및 접속
 
-## 1-1. EC2 인스턴스 시작
+### 1-1. EC2 인스턴스 시작
 
-### 애플리케이션 및 OS 이미지 (Amazon Machine Image)
+#### 애플리케이션 및 OS 이미지 (Amazon Machine Image)
 
 - **OS:** Ubuntu Server 24.04 LTS
 - **인스턴스 유형:** t2.micro
 
-### 키 페어 (로그인)
+#### 키 페어 (로그인)
 
 - **이름:** `moathon-key`
 - **유형:** `RSA`
 - **파일 형식:** `.pem` (OpenSSH용)
 - **[키 페어 생성]** 버튼을 누르면 `moathon-key.pem` 파일이 다운로드된다. **절대 삭제하지 말고 안전한 곳에 보관할 것.**
 
-### 네트워크 설정
+#### 네트워크 설정
 
 보안 그룹 규칙 추가
 
@@ -70,18 +70,18 @@ graph TD
 ![네트워크 설정](/assets/img/posts/2025-12-27-moathon-aws-deployment/17.png)
 *네트워크 설정*
 
-### 인스턴스 생성
+#### 인스턴스 생성
 
 ![인스턴스 생성 성공](/assets/img/posts/2025-12-27-moathon-aws-deployment/16.png)
 *인스턴스 생성 성공*
 
 인스턴스를 클릭한 후 아래 정보창에 `퍼블릭 IPv4 주소`를 복사한다.
 
-## 1-2. 내 컴퓨터에서 서버 접속하기 (SSH)
+### 1-2. 내 컴퓨터에서 서버 접속하기 (SSH)
 
 다운로드한 키 페어(pem)를 이용해 로컬 터미널에서 EC2 서버 (Ubuntu)에 접속한다.
 
-### 접속 명령어 입력
+#### 접속 명령어 입력
 
 터미널(git bash 사용)에 다음 명령어를 입력한다.
 
@@ -92,7 +92,7 @@ ssh -i "C:\Users\USER\Downloads\moathon-key.pem" ubuntu@54.180.xx.xx
 
 처음 접속하면 `Are you sure...?` 라고 묻는데 `yes`라고 입력하고 엔터를 치면 된다.
 
-### 성공 확인
+#### 성공 확인
 
 터미널 화면이 내 컴퓨터 이름에서 `ubuntu@ip-172-xx-xx-xx:~$` 와 같이 바뀌었다면 **접속 성공**! 이제 AWS 데이터센터의 컴퓨터를 제어할 수 있다.
 
@@ -100,9 +100,9 @@ ssh -i "C:\Users\USER\Downloads\moathon-key.pem" ubuntu@54.180.xx.xx
 *터미널 화면*
 
 
-# 3. 백엔드 서버 세팅 (Django + Gunicorn)
+## 3. 백엔드 서버 세팅 (Django + Gunicorn)
 
-## 3-1. 서버 업데이트 및 필수 프로그램 설치
+### 3-1. 서버 업데이트 및 필수 프로그램 설치
 
 서버의 패키지 목록을 업데이트하고, 프로젝트 구동에 필요한 필수 패키지를 설치했다. libpq-dev는 추후 PostgreSQL(RDS) 연결을 위해 필요하다.
 
@@ -115,7 +115,7 @@ sudo apt update
 sudo apt install python3-pip python3-venv git nginx libpq-dev -y
 ```
 
-## 3-2. 깃허브에서 코드 가져오기 (Clone)
+### 3-2. 깃허브에서 코드 가져오기 (Clone)
 
 ```bash
 # 1. 홈 디렉토리로 이동
@@ -131,7 +131,7 @@ ls
 ![image.png](/assets/img/posts/2025-12-27-moathon-aws-deployment/14.png)
 *moathon 폴더가 보여야 함*
 
-## 3-3. 가상환경 구성
+### 3-3. 가상환경 구성
 
 프로젝트별 의존성 격리를 위해 가상환경을 생성하고 패키지를 설치한다.
 
@@ -144,7 +144,7 @@ pip install -r requirements.txt
 pip install gunicorn psycopg2-binary  # 배포용 패키지 추가
 ```
 
-## 3-4. 환경 변수(.env) 설정
+### 3-4. 환경 변수(.env) 설정
 
 GitHub에는 업로드되지 않은 비밀 정보들을 관리하기 위해 서버에 .env 파일을 직접 생성한다.
 
@@ -161,7 +161,7 @@ nano .env
 - `Ctrl + O` (저장) -> `Enter`
 - `Ctrl + X` (종료)
 
-## 3-5. 개발 서버 테스트
+### 3-5. 개발 서버 테스트
 
 배포 전, 장고 개발 서버(runserver)가 정상적으로 뜨는지 확인한다.
 
@@ -173,7 +173,7 @@ python manage.py runserver 0.0.0.0:8000
 ![개발 서버 (runserver) 실행](/assets/img/posts/2025-12-27-moathon-aws-deployment/12.png)
 *개발 서버 (runserver) 실행*
 
-### 접속 확인
+#### 접속 확인
 
 `http://[아까 복사한 퍼블릭 IP]:8000`
 
@@ -183,7 +183,7 @@ python manage.py runserver 0.0.0.0:8000
 실행 결과, `DisallowedHost` 에러가 떴다. 접속은 성공했는데, 보안 설정 때문에 막힌 것.
 
 
-### 보안 설정
+#### 보안 설정
 
 .env 혹은 settings.py의 `ALLOWED_HOSTS`에 EC2의 퍼블릭 IP를 추가해주어야 한다.
 
@@ -203,16 +203,16 @@ ALLOWED_HOSTS=54.180.xx.xx
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 ```
 
-### 서버 재실행
+#### 서버 재실행
 
 ![서버 접속 성공](/assets/img/posts/2025-12-27-moathon-aws-deployment/10.png)
 *서버 접속 성공*
 
-# 4. 웹 서버 구축 (Nginx + Gunicorn)
+## 4. 웹 서버 구축 (Nginx + Gunicorn)
 
 Django의 runserver는 개발용이므로, 실서비스를 위해 **Nginx(웹 서버)**와 **Gunicorn(WSGI 서버)**을 연동한다.
 
-## 4-1. `settings.py`에 정적 파일 경로 추가
+### 4-1. `settings.py`에 정적 파일 경로 추가
 
 ```bash
 Not Found: /favicon.ico
@@ -228,7 +228,7 @@ Not Found: /favicon.ico
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 
-### 정적 파일 모으기 (`collectstatic`)
+#### 정적 파일 모으기 (`collectstatic`)
 
 Nginx가 CSS/JS 파일을 서빙할 수 있도록 `collectstatic`을 수행한다.
 
@@ -236,11 +236,11 @@ Nginx가 CSS/JS 파일을 서빙할 수 있도록 `collectstatic`을 수행한�
 python3 manage.py collectstatic
 ```
 
-## 4-2. Gunicorn 서비스 등록 (Daemon)
+### 4-2. Gunicorn 서비스 등록 (Daemon)
 
 SSH 접속을 끊어도 서버가 계속 돌아가게 하려면 Gunicorn을 시스템 서비스로 등록해야 한다. 소켓 파일(`/tmp/gunicorn.sock`)을 통해 Nginx와 통신하도록 설정했다.
 
-### 서비스 설정 파일 만들기
+#### 서비스 설정 파일 만들기
 
 ```bash
 # /etc/systemd/system/gunicorn.service
@@ -261,7 +261,7 @@ ExecStart=/home/ubuntu/moathon/backend/venv/bin/gunicorn \
 WantedBy=multi-user.target
 ```
 
-### gunicorn 시작 및 등록
+#### gunicorn 시작 및 등록
 
 ```bash
 sudo systemctl start gunicorn
@@ -276,11 +276,11 @@ sudo systemctl status gunicorn
 ![gunicorn 등록 성공](/assets/img/posts/2025-12-27-moathon-aws-deployment/9.png)
 *gunicorn 등록 성공*
 
-## 4-3. Nginx 리버스 프록시 설정
+### 4-3. Nginx 리버스 프록시 설정
 
 외부의 80번 포트 요청을 내부의 Gunicorn 소켓으로 전달(Proxy Pass)하는 설정을 추가한다.
 
-### Nginx 설정 파일
+#### Nginx 설정 파일
 
 ```bash
 # /etc/nginx/sites-available/moathon
@@ -303,7 +303,7 @@ server {
 }
 ```
 
-### 설정한 파일 연결
+#### 설정한 파일 연결
 
 ```bash
 # 설정한 파일을 sites-enabled 폴더로 연결
@@ -315,7 +315,7 @@ sudo nginx -t                             # 오타 없는지 검사
 
 `syntax is ok` / `test is successful`이 나오면 성공.
 
-### Nginx 재시작
+#### Nginx 재시작
 
 설정 후 Nginx를 재시작하면, 포트 번호 없이 IP만으로 접속이 가능하다.
 
@@ -323,7 +323,7 @@ sudo nginx -t                             # 오타 없는지 검사
 sudo systemctl restart nginx
 ```
 
-### 최종 접속 확인
+#### 최종 접속 확인
 
 이제 **포트 번호 없이** 주소창에 IP만 입력해서 접속할 수 있다.
 
@@ -332,13 +332,13 @@ sudo systemctl restart nginx
 ![웹 서버 연결 성공](/assets/img/posts/2025-12-27-moathon-aws-deployment/8.png)
 *웹 서버 연결 성공*
 
-# 5. 프론트엔드 배포 (S3 정적 호스팅)
+## 5. 프론트엔드 배포 (S3 정적 호스팅)
 
 Vue.js 프로젝트는 빌드 후 정적 파일 형태로 AWS S3에서 호스팅한다.
 
-## 5-1. 환경 변수 및 CORS 설정 (Django)
+### 5-1. 환경 변수 및 CORS 설정 (Django)
 
-### `settings.py` 설정
+#### `settings.py` 설정
 
 **Backend (Django)**: 프론트엔드(S3) 도메인에서의 요청을 허용하기 위해 CORS 설정을 수정한다.
 
@@ -354,7 +354,7 @@ Vue.js 프로젝트는 빌드 후 정적 파일 형태로 AWS S3에서 호스팅
 CORS_ALLOW_ALL_ORIGINS = True  # 테스트용 (실 운영 시 도메인 지정 권장)
 ```
 
-### gunicorn 재시작
+#### gunicorn 재시작
 
 Gunicorn을 재시작해서 적용한다.
 
@@ -362,9 +362,9 @@ Gunicorn을 재시작해서 적용한다.
 sudo systemctl restart gunicorn
 ```
 
-## 5-2. 프론트엔드 API 주소 변경
+### 5-2. 프론트엔드 API 주소 변경
 
-### 배포용 `.env` 생성
+#### 배포용 `.env` 생성
 
 **Frontend (Vue)**: 배포 환경에서는 EC2의 API 주소를 바라보도록 `.env.production`을 생성한다. 
 
@@ -376,7 +376,7 @@ sudo systemctl restart gunicorn
 VITE_API_URL=http://54.180.xx.xx  # Nginx가 80번 포트로 받으므로 포트 생략
 ```
 
-### [잠깐] `.env.local` 이 있는데, `.env.production` 을 만드는 이유
+#### [잠깐] `.env.local` 이 있는데, `.env.production` 을 만드는 이유
 
 - **개발할 때:** `npm run dev`를 치면 자동으로 `.env.local`을 읽어서 `localhost`와 통신한다.
 - **배포할 때:** `npm run build`를 치면 자동으로 `.env.production`을 읽어서 `AWS IP`와 통신하도록 구워진다.
@@ -386,9 +386,9 @@ VITE_API_URL=http://54.180.xx.xx  # Nginx가 80번 포트로 받으므로 포트
 | **`.env.local`** | **개발할 때** (`npm run dev`) | `http://127.0.0.1:8000` (내 컴퓨터) |
 | **`.env.production`** | **배포할 때** (`npm run build`) | `http://54.180.xx.xx` (AWS EC2 IP) |
 
-## 5-3. 빌드 및 S3 업로드
+### 5-3. 빌드 및 S3 업로드
 
-### 빌드 (Build)
+#### 빌드 (Build)
 
 사람이 짠 코드를 브라우저가 이해할 수 있는 파일(html, css, js)로 변환한다.
 
@@ -399,14 +399,14 @@ npm run build
 ```
 탐색기에 `dist`라는 폴더가 새로 생겼는지 확인한다.
 
-### AWS S3 버킷 만들기
+#### AWS S3 버킷 만들기
 
 AWS 콘솔에서 **S3 버킷**을 생성한다.
 
 **이 버킷의 퍼블릭 액세스 차단 설정:**
 - **'모든 퍼블릭 액세스 차단'**을 해제해야 외부에서 접근 가능하다.
 
-### 파일 업로드
+#### 파일 업로드
 
 버킷의 **[업로드]** 버튼을 클릭하고, `dist` 폴더 내부의 파일들을 업로드한다.
 - **주의:** `dist` 폴더 자체를 넣는 게 아니라, `dist` 폴더 안에 있는 `index.html`, `assets/` 등을 모두 선택해 넣어야 한다.
@@ -417,9 +417,9 @@ AWS 콘솔에서 **S3 버킷**을 생성한다.
 ![image.png](/assets/img/posts/2025-12-27-moathon-aws-deployment/6.png)
 *업로드 성공*
 
-## 5-4. 정적 웹 호스팅 활성화
+### 5-4. 정적 웹 호스팅 활성화
 
-### 정적 웹 사이트 호스팅 켜기
+#### 정적 웹 사이트 호스팅 켜기
 
 S3 버킷의 [속성] 탭에서 **'정적 웹 사이트 호스팅'**을 활성화하고, 인덱스 문서를 `index.html`로 지정한다. 
 
@@ -429,7 +429,7 @@ S3 버킷의 [속성] 탭에서 **'정적 웹 사이트 호스팅'**을 활성�
 ![정적 웹 사이트 호스팅 편집](/assets/img/posts/2025-12-27-moathon-aws-deployment/5.png)
 *정적 웹 사이트 호스팅 편집*
 
-### 권한 설정 (Bucket Policy)
+#### 권한 설정 (Bucket Policy)
 
 마지막으로 [권한] 탭에서 **버킷 정책(Bucket Policy)**을 추가하여 누구나 읽을 수 있게(`GetObject`) 권한을 부여했다.
 
@@ -448,7 +448,7 @@ S3 버킷의 [속성] 탭에서 **'정적 웹 사이트 호스팅'**을 활성�
 }
 ```
 
-### 배포 완료!
+#### 배포 완료!
 
 생성된 **[버킷 웹 사이트 엔드포인트]** URL로 접속하면 Vue 애플리케이션이 정상적으로 로딩된다.
 
@@ -458,9 +458,9 @@ S3 버킷의 [속성] 탭에서 **'정적 웹 사이트 호스팅'**을 활성�
 ![image.png](/assets/img/posts/2025-12-27-moathon-aws-deployment/3.png)
 *연결 성공*
 
-# 6. RDS에 데이터 적재
+## 6. RDS에 데이터 적재
 
-## 6-1. 초기 데이터 적재 (Data Seeding)
+### 6-1. 초기 데이터 적재 (Data Seeding)
 
 서버 DB가 비어있으므로, 로컬에서 준비한 데이터와 Fixture들을 loaddata 커맨드로 적재했다.
 
@@ -486,7 +486,7 @@ python manage.py loaddata challenges/challenges_social.json
 
 ```
 
-## 6-2. 뱃지 이미지 경로 문제 해결
+### 6-2. 뱃지 이미지 경로 문제 해결
 
 배포 후 뱃지 이미지가 엑스박스로 뜨는 문제가 발생했다.
 
@@ -497,14 +497,14 @@ python manage.py loaddata challenges/challenges_social.json
 ![뱃지 이미지를 불러오지 못함](/assets/img/posts/2025-12-27-moathon-aws-deployment/2.png)
 *뱃지 이미지를 불러오지 못함*
 
-### `public` 폴더로 이사 가기
+#### `public` 폴더로 이사 가기
 
 `frontend/src/assets/badges` 폴더를 통째로 `frontend/public/badges`로 옮겼다.
 
 - **변경 전:** `frontend/src/assets/badges/badge_achieve_3days.png`
 - **변경 후:** `frontend/public/badges/badge_achieve_3days.png`
 
-### 다시 빌드하고 S3 업로드
+#### 다시 빌드하고 S3 업로드
 
 이제 다시 빌드하면 `dist` 폴더 안에 `badges` 폴더가 들어있다.
 
@@ -512,7 +512,7 @@ python manage.py loaddata challenges/challenges_social.json
 2. **확인:** `frontend/dist/badges` 폴더가 생겼는지 확인
 3. **S3 업로드:** `dist` 폴더의 모든 내용물을 AWS S3 버킷에 다시 **덮어쓰기(업로드)**
 
-### EC2 서버 재시작
+#### EC2 서버 재시작
 
 github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
 
@@ -531,12 +531,12 @@ github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
 
 ---
 
-# 최종 아키텍처
+## 최종 아키텍처
 
 ![아키텍처](/assets/img/posts/2025-12-27-moathon-aws-deployment/19.png)
 *아키텍처*
 
-## **CSR(Client-Side Rendering) 배포 구조**
+### **CSR(Client-Side Rendering) 배포 구조**
 
 사용자는 S3 엔드포인트를 통해 접속하고, Vue 앱은 EC2의 Django 서버와 통신하며 데이터를 주고받는다.
 
@@ -548,21 +548,21 @@ github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
     - Nginx가 요청을 받아 Gunicorn으로 넘기고, Django가 로직을 처리해 응답한다.
 - **Database**: AWS RDS (PostgreSQL)
 
-## 오늘의 배포 과정
+### 오늘의 배포 과정
 
-### 프론트엔드 (Vue.js)
+#### 프론트엔드 (Vue.js)
 
 - `npm run build`로 최적화된 파일을 생성했다.
 - **AWS S3**에 업로드하여 정적 웹 호스팅을 구현했다.
 - `public` 폴더를 활용해 정적 에셋(뱃지) 경로 문제를 해결했다.
 
-### 백엔드 (Django)
+#### 백엔드 (Django)
 
 - **AWS EC2 (Ubuntu)** 가상 서버를 구축했다.
 - **Gunicorn**과 **Systemd**를 이용해 24시간 꺼지지 않는 데몬 서버를 만들었다.
 - **Nginx** 웹 서버를 붙여 요청을 효율적으로 관리하도록 했다.
 
-### 데이터베이스 & 연동
+#### 데이터베이스 & 연동
 
 - CORS 설정을 통해 프론트엔드와 백엔드의 보안 장벽을 뚫고 통신을 성공시켰다.
 - `loaddata`를 통해 로컬에 있던 데이터(뱃지, 금융상품 등)를 서버 DB로 이관했다.
