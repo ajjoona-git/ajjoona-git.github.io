@@ -13,11 +13,7 @@ description: "AWS EC2(Ubuntu)에 Django와 Nginx, Gunicorn을 연동하여 백�
 
 다음은 Nginx를 리버스 프록시로 두고 Gunicorn을 WSGI 서버로 사용하여 안정적인 서비스를 구축한 과정이다.
 
-# [모아톤] AWS 풀스택 배포 가이드 (EC2, S3, Nginx, Gunicorn)
-
-모아톤 프로젝트의 배포 아키텍처는 **백엔드(Django)는 AWS EC2**에서, **프론트엔드(Vue.js)는 AWS S3**를 통해 서비스하는 구조로 설계했다. Nginx를 리버스 프록시로 두고 Gunicorn을 WSGI 서버로 사용하여 안정적인 서비스를 구축한 과정을 기록한다.
-
-```mermaid
+```
 graph TD
     User((사용자))
     
@@ -537,6 +533,9 @@ github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
 
 # 최종 아키텍처
 
+![아키텍처](/assets/img/posts/2025-12-27-moathon-aws-deployment/19.png)
+*아키텍처*
+
 ## **CSR(Client-Side Rendering) 배포 구조**
 
 사용자는 S3 엔드포인트를 통해 접속하고, Vue 앱은 EC2의 Django 서버와 통신하며 데이터를 주고받는다.
@@ -572,33 +571,5 @@ github에 push 한 코드를 적용하기 위해, 서버를 재시작한다.
 
 이제 https:// 로 시작하는 도메인을 사용하기 위해, CloudFront를 도입해봐야겠다.
 
-```mermaid
-graph TD
-    User((사용자))
-    
-    subgraph AWS Cloud
-        subgraph Frontend Hosting
-            CF[CloudFront - CDN & SSL]
-            S3[S3 Bucket - Vue 빌드 파일]
-        end
-        
-        subgraph Backend Infrastructure
-            subgraph EC2 Instance
-                Nginx[Nginx - Web Server]
-                Gunicorn[Gunicorn - WSGI]
-                Django[Django App]
-            end
-            RDS[(AWS RDS - PostgreSQL)]
-        end
-    end
-
-    %% CloudFront를 경유해야 HTTPS 사용 가능
-    User -- "https://moathon.com (접속)" --> CF
-    CF -- "캐싱된 정적 파일 제공" --> User
-    CF -- "원본 요청 (Origin Fetch)" --> S3
-    
-    User -- "API 요청" --> Nginx
-    Nginx --> Gunicorn
-    Gunicorn --> Django
-    Django --> RDS
-```
+![목표 아키텍처](/assets/img/posts/2025-12-27-moathon-aws-deployment/18.png)
+*목표 아키텍처*
