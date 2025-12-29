@@ -178,6 +178,51 @@ const props = defineProps({
 </style>
 ```
 
+### Issue 4: 모아톤 삭제 시 UNIQUE constraint failed
+
+![모아톤 삭제 시 500 Error](/assets/img/posts/2025-12-23-moathon-badge-system/15.png)
+*모아톤 삭제 시 500 Error*
+
+- **현상**: 모아톤 삭제 API 요청 시 `500 Internal Server Error` 에러가 발생함.
+    ```bash
+    # Django 터미널 로그
+    django.db.utils.IntegrityError: UNIQUE constraint failed: accounts_userbadge.user_id, accounts_userbadge.badge_id
+    ```
+- **원인**(충돌 시나리오): 
+    1. **상황:**
+        - 사용자가 '모아톤 A'를 진행하며 **'반환점(50%)' 뱃지**를 받는다. (DB: `user=나`, `badge=50%`, `moathon=A`)
+        - 사용자가 이전에 '모아톤 B'를 삭제해서, 이미 **'반환점(50%)' 뱃지(Orphan)**를 하나 가지고 있다. (DB: `user=나`, `badge=50%`, `moathon=NULL`)
+    2. **삭제 시도:**
+        - '모아톤 A'를 삭제한다.
+        - `on_delete=models.SET_NULL` 설정에 의해, `moathon=A`였던 뱃지가 **`moathon=NULL`로 변경**되려고 시도한다.
+    3. **충돌 발생 (IntegrityError):**
+        - 변경하려는 순간, DB는 `unique_user_badge_when_moathon_null` 제약 조건을 체크한다.
+        - **"잠깐! 너 이미 `moathon=NULL`인 50% 뱃지 가지고 있잖아?"**
+        - 결국 유일성 제약 위반으로 **삭제 트랜잭션 전체가 롤백되고 500 에러**가 터진다.
+- **해결**: 모아톤 삭제 시 해당 모아톤으로 받은 뱃지도 함께 삭제하도록 CASCADE 조건을 설정했다.
+
+```python
+# accounts/models.py
+
+class UserBadge(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='badges')
+    badge = models.ForeignKey(Badge, on_delete=models.CASCADE)
+
+    # [수정 전] SET_NULL -> 모아톤 삭제 시 뱃지가 '주인 없는 뱃지'가 되어 충돌 유발
+    # moathon = models.ForeignKey(Moathon, on_delete=models.SET_NULL, null=True, blank=True)
+
+    # [수정 후] CASCADE -> 모아톤 삭제 시, 해당 모아톤으로 받은 뱃지도 함께 삭제
+    moathon = models.ForeignKey(
+        Moathon, 
+        on_delete=models.CASCADE,  # <-- 여기를 수정!
+        null=True, 
+        blank=True
+    )
+
+    # ... 나머지 코드는 그대로 유지 ...
+```
+
+
 ---
 
 ## 마치며 (Insights)
