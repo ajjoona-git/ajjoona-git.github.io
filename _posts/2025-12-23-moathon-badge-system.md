@@ -2,7 +2,7 @@
 title: "[모아톤] 뱃지 시스템 구현: 기획부터 트러블슈팅까지"
 date: 2025-12-23 09:00:00 +0900
 categories: [Projects, 모아톤]
-tags: [Django, Vue.js, Troubleshooting, Serializer, Frontend, Refactoring, Async]
+tags: [Django, Vue.js, Troubleshooting, Serializer, Frontend, Gamification, Refactoring, Async]
 toc: true 
 comments: true
 image: /assets/img/posts/2025-12-23-moathon-badge-system/14.png
