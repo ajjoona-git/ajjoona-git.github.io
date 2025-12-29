@@ -2,7 +2,7 @@
 title: "[모아톤] 메인/랜딩 페이지 구현과 SPA 상태 관리 트러블슈팅"
 date: 2025-12-24 09:00:00 +0900
 categories: [Projects, 모아톤]
-tags: [Vue.js, Pinia, SPA, Troubleshooting, Lifecycle, Authentication, Refactoring]
+tags: [Frontend, Vue.js, Pinia, SPA, Troubleshooting, Lifecycle, Authentication, Refactoring]
 toc: true 
 comments: true
 image: /assets/img/posts/2025-12-24-moathon-landing-main-spa/4.png

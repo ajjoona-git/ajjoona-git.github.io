@@ -2,7 +2,7 @@
 title: "[모아톤] 프로필 페이지 구현과 데이터 동기화 이슈 해결 (Pinia, Serializer)"
 date: 2025-12-24 09:00:00 +0900
 categories: [Projects, 모아톤]
-tags: [Django, Vue.js, Pinia, Troubleshooting, Serializer, FormData, Refactoring]
+tags: [Django, Vue.js, Pinia, Troubleshooting, Serializer, API, FormData, Refactoring]
 toc: true 
 comments: true
 image: /assets/img/posts/2025-12-24-moathon-profile/3.png
