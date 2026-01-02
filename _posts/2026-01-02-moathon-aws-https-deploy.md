@@ -76,6 +76,7 @@ server {
 
     # ... 기존 설정 ...
 }
+
 ```
 
 
@@ -199,7 +200,7 @@ S3에 새 파일을 올렸더라도 CloudFront는 캐시된 구버전 파일을 
 이제 브라우저 주소창에 CloudFront 도메인(`https://...`)을 입력하면 **자물쇠 아이콘**과 함께 안전하게 접속된다. 개발자 도구의 Network 탭을 확인해 보면, 백엔드 API 요청 또한 HTTPS로 암호화되어 전송되는 것을 확인할 수 있다.
 
 *>> 모아톤 바로가기*
-{% linkpreview "https://d314hr75zv7jjv.cloudfront.net/" %}
+{% linkpreview "https://d314hr75zv7jjv.cloudfront.net" %}
 
 ![https 접속 확인](/assets/img/posts/2026-01-02-moathon-aws-https-deploy/1.png)
 *https 접속 확인*
