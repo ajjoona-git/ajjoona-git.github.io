@@ -1,7 +1,16 @@
 {% assign safe_url = url %}
+{% assign safe_image = image %}
 
 {% unless safe_url contains 'http://' or safe_url contains 'https://' %}
-  {% assign safe_url = safe_url | replace: '//', 'https://' %}
+  {% if safe_url contains '//' %}
+    {% assign safe_url = safe_url | replace: '//', 'https://' %}
+  {% endif %}
+{% endunless %}
+
+{% unless safe_image contains 'http://' or safe_image contains 'https://' %}
+  {% if safe_image contains '//' %}
+    {% assign safe_image = safe_image | replace: '//', 'https://' %}
+  {% endif %}
 {% endunless %}
 
 <div class="jekyll-linkpreview-wrapper">
@@ -20,7 +29,7 @@
       </div>
     </div>
   </div>
-  {% if image %}
-    <div class="jekyll-linkpreview-image" style="background-image: url('{{ image }}');"></div>
+  {% if safe_image %}
+    <div class="jekyll-linkpreview-image" style="background-image: url('{{ safe_image }}');"></div>
   {% endif %}
 </div>
