@@ -1,15 +1,21 @@
+{% assign safe_url = url %}
+
+{% unless safe_url contains 'http://' or safe_url contains 'https://' %}
+  {% assign safe_url = safe_url | replace: '//', 'https://' %}
+{% endunless %}
+
 <div class="jekyll-linkpreview-wrapper">
   <div class="jekyll-linkpreview-wrapper-inner">
     <div class="jekyll-linkpreview-content">
       <div class="jekyll-linkpreview-body">
         <div class="jekyll-linkpreview-title">
-          <a href="{{ url }}" target="_blank">{{ title }}</a>
+          <a href="{{ safe_url }}" target="_blank">{{ title }}</a>
         </div>
         {% if description %}
           <div class="jekyll-linkpreview-description">{{ description }}</div>
         {% endif %}
         <div class="jekyll-linkpreview-footer">
-          <a href="{{ url }}" target="_blank">{{ domain }}</a>
+          <a href="{{ safe_url }}" target="_blank">{{ domain }}</a>
         </div>
       </div>
     </div>
