@@ -13,10 +13,6 @@ description: "당근의 'User Activation 전사 공통 데이터 레이어' 구�
 
 하지만 최근 **당근 테크 블로그의 [User Activation을 전사 공통 데이터 레이어로 만들며 해결한 3가지]** 포스팅을 읽고, 데이터 설계에 대한 시야가 좁았음을 깨닫게 되었다.
 
-### 원문 읽기
-
-{% linkpreview "https://medium.com/daangn/activation%EC%9D%84-%EC%A0%84%EC%82%AC-%EA%B3%B5%ED%86%B5-%EB%A0%88%EC%9D%B4%EC%96%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EB%A9%B0-%ED%95%B4%EA%B2%B0%ED%95%9C-3%EA%B0%80%EC%A7%80-%EC%8B%A0%EB%A2%B0%EC%84%B1-%EB%B9%84%EC%9A%A9-%EC%83%9D%EC%82%B0%EC%84%B1-f40d362107ff" %}
-
 ### 인상 깊었던 설계: Fact 레이어와 Activation의 3가지 모델
 
 당근은 유저가 현재 어떤 상태(신규, 유지, 복귀, 이탈)인지와 상태 간의 이동(Flow)을 파악하기 위해 **Activation 레이어**를 구축했다.
