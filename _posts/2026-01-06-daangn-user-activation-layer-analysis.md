@@ -58,4 +58,4 @@ description: "당근의 'User Activation 전사 공통 데이터 레이어' 구�
 
 ### 레퍼런스
 
-[당근 테크 블로그 | 당근은 왜 User Activation을 전사 공통 데이터 레이어로 만들었을까?](https://medium.com/daangn/activation%EC%9D%84-%EC%A0%84%EC%82%AC-%EA%B3%B5%ED%86%B5-%EB%A0%88%EC%9D%B4%EC%96%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EB%A9%B0-%ED%95%B4%EA%B2%B0%ED%95%9C-3%EA%B0%80%EC%A7%80-%EC%8B%A0%EB%A2%B0%EC%84%B1-%EB%B9%84%EC%9A%A9-%EC%83%9D%EC%82%B0%EC%84%B1-f40d362107ff)
+[당근 테크 블로그 \| 당근은 왜 User Activation을 전사 공통 데이터 레이어로 만들었을까?](https://medium.com/daangn/activation%EC%9D%84-%EC%A0%84%EC%82%AC-%EA%B3%B5%ED%86%B5-%EB%A0%88%EC%9D%B4%EC%96%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EB%A9%B0-%ED%95%B4%EA%B2%B0%ED%95%9C-3%EA%B0%80%EC%A7%80-%EC%8B%A0%EB%A2%B0%EC%84%B1-%EB%B9%84%EC%9A%A9-%EC%83%9D%EC%82%B0%EC%84%B1-f40d362107ff)

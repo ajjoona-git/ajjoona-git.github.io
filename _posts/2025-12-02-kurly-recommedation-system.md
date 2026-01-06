@@ -79,4 +79,4 @@ Retrieval Head가 빠른 반면에 성능이 떨어지고, Generative Head는 �
 
 ### 레퍼런스
 
-[Kurly Tech Blog | 개인화 추천 시스템 1편 - 유저의 행동은 “언어”일까? : Collaborative Embedding 구축기 (feat. Knowledge Distillation)]("https://helloworld.kurly.com/blog/personalized-recommendation-v1/")
+[Kurly Tech Blog \| 개인화 추천 시스템 1편 - 유저의 행동은 “언어”일까? : Collaborative Embedding 구축기 (feat. Knowledge Distillation)]("https://helloworld.kurly.com/blog/personalized-recommendation-v1/")
