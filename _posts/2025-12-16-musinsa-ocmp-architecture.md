@@ -104,6 +104,6 @@ description: "무신사의 파편화된 회원 시스템을 하나로 통합하�
 
 ### 레퍼런스
 
-[MUSINSA tech | 하나의 ID로 모든 경험을 잇다: 팀 무신사 통합 회원 시스템 런치 여정](https://medium.com/musinsa-tech/%ED%95%98%EB%82%98%EC%9D%98-id%EB%A1%9C-%EB%AA%A8%EB%93%A0-%EA%B2%BD%ED%97%98%EC%9D%84-%EC%9E%87%EB%8B%A4-%ED%8C%80-%EB%AC%B4%EC%8B%A0%EC%82%AC-%ED%86%B5%ED%95%A9-%ED%9A%8C%EC%9B%90-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%9F%B0%EC%B9%98-%EC%97%AC%EC%A0%95-72f5b0218c72?source=rss----f107b03c406e---4)
+[MUSINSA tech \| 하나의 ID로 모든 경험을 잇다: 팀 무신사 통합 회원 시스템 런치 여정](https://medium.com/musinsa-tech/%ED%95%98%EB%82%98%EC%9D%98-id%EB%A1%9C-%EB%AA%A8%EB%93%A0-%EA%B2%BD%ED%97%98%EC%9D%84-%EC%9E%87%EB%8B%A4-%ED%8C%80-%EB%AC%B4%EC%8B%A0%EC%82%AC-%ED%86%B5%ED%95%A9-%ED%9A%8C%EC%9B%90-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%9F%B0%EC%B9%98-%EC%97%AC%EC%A0%95-72f5b0218c72?source=rss----f107b03c406e---4)
 
-[Microsoft Learn | Federated Identity pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/federated-identity)
+[Microsoft Learn \| Federated Identity pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/federated-identity)
