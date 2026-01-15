@@ -5,7 +5,7 @@ categories: [Tech, Web]
 tags: [WebRTC, P2P, Signaling, Kurento, WebSocket, Streaming, Architecture, Network]
 toc: true 
 comments: true
-image: /assets/img/posts/2026-01-13-webrtc-vs-websocket/2.png
+image: /assets/img/posts/2026-01-13-webrtc-vs-websocket/1.png
 description: "WebRTC의 기본 개념과 P2P 통신의 한계를 극복하기 위한 미디어 서버(Kurento) 도입 배경을 정리했습니다. 또한 WebRTC와 WebSocket의 역할 차이, 그리고 시그널링 과정에서의 데이터 흐름을 상세히 설명합니다."
 ---
 
