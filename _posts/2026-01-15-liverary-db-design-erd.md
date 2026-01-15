@@ -3,6 +3,9 @@ title: "[LIVErary] 메타버스 독서 플랫폼 DB 설계: 단일 테이블 전
 date: 2026-01-15 09:00:00 +0900
 categories: [Projects, LIVErary]
 tags: [DatabaseDesign, DB, ERD, SystemArchitecture, Refactoring, Redis, Optimization, RBAC]
+toc: true 
+comments: true
+image: /assets/img/posts/2026-01-15-liverary-db-design-erd/1.jpg
 description: "서로 다른 성격의 3가지 공간(열람실, 북토크, 북콘서트)을 단일 테이블 전략(Single Table Strategy)으로 통합하고, 글로벌 권한과 세션 권한을 분리하여 유연성을 확보한 DB 설계 과정입니다. 실시간 데이터와 영속성 데이터를 분리한 최적화 전략도 포함합니다."
 ---
 
