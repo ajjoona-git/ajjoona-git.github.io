@@ -1,5 +1,5 @@
 ---
-title: "데이터 유효성 검증과 구현"
+title: "데이터 유효성 검증: DTO와 Service"
 date: 2026-01-20 09:00:00 +0900
 categories: [Tech, Java]
 tags: [Java, SpringBoot, Validation, DTO, Service, Controller, Transactional, Architecture]
