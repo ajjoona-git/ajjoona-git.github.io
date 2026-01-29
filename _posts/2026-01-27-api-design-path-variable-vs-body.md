@@ -1,8 +1,8 @@
 ---
-title: "[API Design] Path Variable vs Request Body (RESTful, 확장성, 보안)"
+title: "API Design: Path Variable vs Request Body (RESTful, 확장성, 보안)"
 date: 2026-01-27 09:00:00 +0900
 categories: [Tech, Web]
-tags: [APIDesign, RESTAPI, Security, Logging, SpringBoot, Refactoring]
+tags: [APIDesign, RESTful, API, Security, Logging, SpringBoot, Refactoring]
 toc: true
 comments: true
 description: "API 엔드포인트 설계 시 ID 값을 Path Variable(/resource/{id})로 넘길지, Request Body로 넘길지 고민될 때의 판단 기준을 정리했습니다. 확장성, RESTful 의미론, 그리고 서버 로그와 관련된 보안 이슈를 비교 분석합니다."
