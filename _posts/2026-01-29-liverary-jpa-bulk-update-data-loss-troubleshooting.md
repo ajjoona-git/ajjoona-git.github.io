@@ -135,3 +135,11 @@ void exitAllUsersByRoom(...);
     - `clearAutomatically = true`: 벌크 연산 후 영속성 컨텍스트를 비워 데이터 불일치를 막는다. (조회 시 DB에서 새로 가져옴)
     - `flushAutomatically = true`: 벌크 연산 전 영속성 컨텍스트의 변경 사항을 DB에 미리 반영하여, **변경 사항 증발**을 막는다.
 
+
+---
+
+### 레퍼런스
+
+{% linkpreview "https://ajjoona-git.github.io/posts/jpa-transaction-and-persistence-context/" %}
+
+{% linkpreview "https://ajjoona-git.github.io/posts/liverary-room-scheduler-logic/" %}
