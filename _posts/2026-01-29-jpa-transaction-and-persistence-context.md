@@ -1,7 +1,7 @@
 ---
 title: "JPA 영속성 컨텍스트(Persistence Context)와 DB의 동기화"
 date: 2026-01-29 10:00:00 +0900
-categories: [Tech, Web]
+categories: [Tech, Java]
 tags: [SpringBoot, Java, JPA, Hibernate, PersistenceContext, Transaction, BulkUpdate, Memory]
 toc: true
 comments: true
