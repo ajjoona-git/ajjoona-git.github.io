@@ -5,7 +5,7 @@ categories: [Projects, LIVErary]
 tags: [SpringBoot, Scheduler, JPA, Cron, Automation, Refactoring]
 toc: true
 comments: true
-image: /assets/img/posts/2026-01-29-liverary-room-scheduler-logic/2.pn
+image: /assets/img/posts/2026-01-29-liverary-room-scheduler-logic/2.png
 description: "Spring Scheduler를 도입하여 예약된 방의 상태(자동 시작, 노쇼 종료, 정상 종료)를 자동으로 관리하는 로직을 구현했습니다. Cron 표현식을 활용한 주기적 실행 흐름과 JPA 쿼리 메서드를 이용한 상태 변경 과정을 상세히 정리합니다."
 ---
 
