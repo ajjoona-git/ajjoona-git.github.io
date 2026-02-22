@@ -3,6 +3,8 @@ title: "[둥지] Docker 환경 분리와 보안 전략: Multi-stage Build부터 
 date: 2026-02-08 09:00:00 +0900
 categories: [Projects, 둥지]
 tags: [Docker, DockerCompose, DevOps, Security, Makefile, MultiStageBuild, Secrets, Python]
+toc: true
+comments: true
 description: "Docker 이미지를 경량화하기 위한 Multi-stage Build 전략과 Non-root User 설정, Docker Compose Override 패턴을 이용한 개발/운영 환경 분리 과정을 공유합니다. 또한 Makefile을 통한 명령어 관리와 Docker Secrets를 활용한 안전한 시크릿 관리법을 다룹니다."
 ---
 

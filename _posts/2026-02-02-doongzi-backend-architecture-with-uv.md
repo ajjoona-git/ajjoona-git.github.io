@@ -3,6 +3,8 @@ title: "[둥지] FastAPI + AI 워커를 위한 모던 백엔드 구조 설계 (f
 date: 2026-02-02 09:00:00 +0900
 categories: [Projects, 둥지]
 tags: [FastAPI, uv, Python, Architecture, Redis, Async, DevOps, Backend]
+toc: true
+comments: true
 description: "FastAPI 기반의 AI 서비스 백엔드를 설계하며 내린 기술적 의사결정을 공유합니다. pip 대신 Rust 기반의 uv를 도입하여 의존성을 관리하고, Redis를 활용한 Producer-Consumer 패턴으로 클라우드 API와 홈 서버(GPU) 간의 비동기 처리를 구현했습니다."
 ---
 
