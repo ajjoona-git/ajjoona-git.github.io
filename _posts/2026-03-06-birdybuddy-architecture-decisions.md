@@ -5,6 +5,7 @@ categories: [Projects, 허수아비]
 tags: [Architecture, Kafka, Spark, Hadoop, Lambda, WebRTC, SSE, MediaMTX, Docker, Backend, ADR, Infra]
 toc: true
 comments: true
+image: /assets/img/posts/2026-03-06-birdybuddy-architecture-decisions/1.png
 description: "조류 충돌 예방 관제 시스템 '허수아비'의 5가지 핵심 아키텍처 의사결정을 정리합니다. 가상 엣지 카메라, 영상 중계 프록시, 실시간 알림 프로토콜, 데이터 파이프라인, 물리 노드 분리까지 각 결정의 트레이드오프와 근거를 다룹니다."
 ---
 
