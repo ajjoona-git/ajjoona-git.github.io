@@ -5,7 +5,7 @@ categories: [Project, 허수아비]
 tags: [GitLab, CI/CD, Docker, DinD, DooD, GitLabRunner, DevOps, Backend, Infra]
 toc: true
 comments: true
-image: 
+image: /assets/img/posts/2026-03-11-birdybuddy-ci-dind-vs-dood/1.png
 description: "CI 파이프라인의 개념부터 도커 구조, DinD vs DooD 비교, GitLab Runner DooD 세팅까지 단계별로 정리합니다."
 ---
 
