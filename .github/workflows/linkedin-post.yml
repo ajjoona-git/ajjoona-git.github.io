@@ -1,0 +1,92 @@
+name: "Post to LinkedIn"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "_posts/**"
+
+jobs:
+  linkedin-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new post
+        id: detect
+        run: |
+          NEW_FILE=$(git diff --name-status HEAD~1 HEAD -- '_posts/*.md' | grep '^A' | awk '{print $2}' | head -1)
+          echo "new_file=$NEW_FILE" >> $GITHUB_OUTPUT
+          if [ -z "$NEW_FILE" ]; then
+            echo "No new post detected, skipping."
+          else
+            echo "New post: $NEW_FILE"
+          fi
+
+      - name: Parse frontmatter
+        if: steps.detect.outputs.new_file != ''
+        id: parse
+        run: |
+          FILE="${{ steps.detect.outputs.new_file }}"
+
+          TITLE=$(grep '^title:' "$FILE" | head -1 | sed 's/^title: *//;s/^"//;s/"$//')
+          DESCRIPTION=$(grep '^description:' "$FILE" | head -1 | sed 's/^description: *//;s/^"//;s/"$//')
+          TAGS_RAW=$(grep '^tags:' "$FILE" | head -1 | sed 's/^tags: *\[//;s/\]//')
+          HASHTAGS=$(echo "$TAGS_RAW" | tr ',' '\n' | sed 's/^ *//;s/ *$//' | sed 's/^/#/' | tr '\n' ' ')
+
+          FILENAME=$(basename "$FILE" .md)
+          SLUG=$(echo "$FILENAME" | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')
+          BLOG_URL="https://ajjoona-git.github.io/posts/${SLUG}/"
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "hashtags=$HASHTAGS" >> $GITHUB_OUTPUT
+          echo "blog_url=$BLOG_URL" >> $GITHUB_OUTPUT
+
+      - name: Setup Python
+        if: steps.detect.outputs.new_file != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install linkedin-api
+        if: steps.detect.outputs.new_file != ''
+        run: pip install linkedin-api
+
+      - name: Post to LinkedIn
+        if: steps.detect.outputs.new_file != ''
+        env:
+          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+        run: |
+          python3 << 'EOF'
+import os
+from linkedin_api import Linkedin
+
+email = os.environ["LINKEDIN_EMAIL"]
+password = os.environ["LINKEDIN_PASSWORD"]
+
+title = """${{ steps.parse.outputs.title }}"""
+description = """${{ steps.parse.outputs.description }}"""
+hashtags = """${{ steps.parse.outputs.hashtags }}"""
+blog_url = """${{ steps.parse.outputs.blog_url }}"""
+
+text = f"""📝 새 글을 올렸습니다!
+
+{title}
+
+{description}
+
+👉 {blog_url}
+
+{hashtags}"""
+
+api = Linkedin(email, password)
+api.post(text)
+print("LinkedIn 포스팅 완료!")
+EOF
