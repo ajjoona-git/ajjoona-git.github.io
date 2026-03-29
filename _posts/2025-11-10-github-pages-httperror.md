@@ -1,7 +1,7 @@
 ---
 title: "GitHub Pages 배포 실패 해결: HttpError Not Found"
 date: 2025-11-10 09:00:00 +0900
-categories: [Tech, DevOps]  # 계층적 카테고리 지원 [대분류, 소분류]
+categories: [Tech, Git]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [GitHub, GitHubPages, GitHubActions, HttpError, Deployment, Debug, Troubleshooting]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

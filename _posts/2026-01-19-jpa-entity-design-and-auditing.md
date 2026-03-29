@@ -1,7 +1,7 @@
 ---
 title: "JPA Entity 설계: 주요 어노테이션과 시간 관리(Auditing vs Manual)"
 date: 2026-01-19 09:00:00 +0900
-categories: [Tech, Java]
+categories: [Tech, Backend]
 tags: [SpringBoot, JPA, Entity, Auditing, Lombok, Refactoring]
 toc: true
 comments: true

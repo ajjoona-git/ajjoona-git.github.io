@@ -1,7 +1,7 @@
 ---
 title: "무신사 기술 블로그 분석: OCMP 통합 회원 시스템과 대규모 마이그레이션"
 date: 2025-12-16 09:00:00 +0900
-categories: [Tech, Web]
+categories: [Tech, Architecture]
 tags: [Musinsa, SystemArchitecture, Migration, Legacy, CDC, Backend, StranglerFigPattern]
 toc: true 
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "승인 대기 중인 브랜치에서 이어서 작업하기 (Stacked PR 전략)"
 date: 2025-12-15 09:00:00 +0900
-categories: [Tech, DevOps]
+categories: [Tech, Git]
 tags: [Git, PullRequest, Workflow, StackedPR, BranchStrategy, Collaboration]
 description: "선행 작업(Branch A)이 아직 머지되지 않은 상태에서 이를 기반으로 후행 작업(Branch B)을 시작해야 할 때, 의존성을 관리하며 PR을 작성하는 'Stacked PR' 전략과 구체적인 Git 명령어 흐름을 소개합니다."
 toc: true 

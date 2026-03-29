@@ -1,7 +1,7 @@
 ---
 title: "[Spring Boot] Django 개발자의 스프링 계층형 아키텍처 적응기 (feat. 비즈니스 로직이란?)"
 date: 2026-01-16 09:00:00 +0900
-categories: [Tech, Java]
+categories: [Tech, Backend]
 tags: [SpringBoot, Architecture, LayeredArchitecture, MVC, Refactoring, Backend]
 toc: true
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "API Design: Path Variable vs Request Body (RESTful, 확장성, 보안)"
 date: 2026-01-27 09:00:00 +0900
-categories: [Tech, Web]
+categories: [Tech, Backend]
 tags: [APIDesign, RESTful, API, Security, Logging, SpringBoot, Refactoring]
 toc: true
 comments: true

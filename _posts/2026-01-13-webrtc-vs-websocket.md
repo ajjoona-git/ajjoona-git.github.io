@@ -1,7 +1,7 @@
 ---
 title: "WebRTC와 WebSocket"
 date: 2026-01-13 09:00:00 +0900
-categories: [Tech, Web]
+categories: [Tech, Architecture]
 tags: [WebRTC, P2P, Signaling, Kurento, WebSocket, Streaming, Architecture, Network]
 toc: true 
 comments: true

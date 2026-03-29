@@ -1,7 +1,7 @@
 ---
 title: "[Spring Boot] @Valid 유효성 검증 실패가 500 에러를 뱉는 이유와 해결법 (MethodArgumentNotValidException)"
 date: 2026-01-26 09:00:00 +0900
-categories: [Tech, Java]
+categories: [Tech, Backend]
 tags: [Java, SpringBoot, Validation, ErrorHandling, GlobalExceptionHandler, Troubleshooting]
 toc: true
 comments: true

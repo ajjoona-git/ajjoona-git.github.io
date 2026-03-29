@@ -1,7 +1,7 @@
 ---
 title: "당근 테크 블로그 분석: 저장 중심에서 활용 중심의 데이터 설계로"
 date: 2026-01-06 09:00:00 +0900
-categories: [Tech, Web]
+categories: [Tech, Architecture]
 tags: [Daangn, Insight, DataEngineering, DataAnalysis, SystemArchitecture, UserActivation, DB]
 toc: true
 comments: true

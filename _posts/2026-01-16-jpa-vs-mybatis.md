@@ -1,7 +1,7 @@
 ---
 title: "[Spring Boot] JPA vs MyBatis: 무엇을 선택해야 할까?"
 date: 2026-01-16 09:00:00 +0900
-categories: [Tech, Java]
+categories: [Tech, Backend]
 tags: [Java, SpringBoot, JPA, MyBatis, ORM, SQLMapper, QueryDSL, Backend, Database]
 toc: true
 comments: true
