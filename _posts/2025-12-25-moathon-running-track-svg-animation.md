@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] GSAP로 구현한 목표 달성 트랙(Track) 시각화 (feat. SVG 애니메이션)"
 date: 2025-12-25 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Frontend, Vue.js, GSAP, SVG, Visualization, Gamification, UI/UX]
 toc: true 
 comments: true

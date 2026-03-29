@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 금/은 시세 시각화 구현 (feat. Google Charts & Vue.js)"
 date: 2025-12-22 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Vue.js, GoogleCharts, Frontend, Visualization, Troubleshooting, Refactoring]
 toc: true 
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] 로컬 개발 환경 설정 중 DJANGO_SECRET_KEY 에러 해결"
 date: 2025-11-05 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Django, Troubleshooting, Debug, Environment, Configuration, SecretKey]
 toc: true 
 comments: true 

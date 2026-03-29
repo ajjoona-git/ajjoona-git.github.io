@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 전역 권한 정책 재수립 및 비로그인 사용자 UX 개선"
 date: 2025-12-25 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Django, DRF, Vue.js, Permissions, UX, Authentication, Refactoring]
 toc: true 
 comments: true

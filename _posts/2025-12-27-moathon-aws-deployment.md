@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] AWS 풀스택 배포 가이드 (EC2, S3, Nginx, Gunicorn)"
 date: 2025-12-27 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [AWS, EC2, S3, Django, Vue.js, Nginx, Gunicorn, Deployment, DevOps]
 toc: true 
 comments: true

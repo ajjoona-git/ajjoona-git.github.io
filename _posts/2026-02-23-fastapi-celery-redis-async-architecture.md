@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI + Celery + Redis: 비동기 백엔드 아키텍처와 최종 의사결정"
 date: 2026-02-23 21:30:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Python, Celery, Redis, Asynchronous, Architecture, Backend]
 toc: true
 comments: true

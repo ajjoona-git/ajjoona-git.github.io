@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] Font Awesome에 원하는 아이콘이 없을 때? (Feat. CSS로 에스컬레이터 구현하기)"
 date: 2025-12-03 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Frontend, CSS, UI/UX, FontAwesome, Troubleshooting]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

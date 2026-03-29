@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] 로컬 개발 환경 구축: Docker Compose로 MySQL, Redis, Media Server 통합하기"
 date: 2026-01-17 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [Docker, DockerCompose, Infrastructure, MySQL, Redis, Kurento, Coturn, WebRTC]
 toc: true
 comments: true

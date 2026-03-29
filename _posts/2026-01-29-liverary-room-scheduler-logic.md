@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] Spring Scheduler를 활용한 예약 방 수명주기 관리 (자동 시작/종료)"
 date: 2026-01-29 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [SpringBoot, Scheduler, JPA, Cron, Automation, Refactoring]
 toc: true
 comments: true

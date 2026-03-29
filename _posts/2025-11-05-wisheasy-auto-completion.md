@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] 지하철 역 검색 자동완성 구현 (feat. Debouncing & UX)"
 date: 2025-11-05 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Django, JavaScript, Debouncing, AutoCompletion, UI/UX, Troubleshooting, Frontend, Backend]
 toc: true  
 comments: true 

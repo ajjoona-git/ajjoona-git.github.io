@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 테스트 환경 구축기: Mocking부터 Docker CI/CD 연동까지"
 date: 2026-03-02 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Pytest, Docker, GitHubActions, CI/CD, Troubleshooting, DevOps, Mocking, Backend]
 toc: true
 comments: true

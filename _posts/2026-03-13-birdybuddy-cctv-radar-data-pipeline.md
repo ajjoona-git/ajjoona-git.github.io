@@ -1,7 +1,7 @@
 ---
 title: "[허수아비] CCTV 영상과 레이더 시계열 데이터 파이프라인"
 date: 2026-03-13 10:00:00 +0900
-categories: [Projects, 허수아비]
+categories: [Project, 허수아비]
 tags: [DataPipeline, CCTV, Radar, Kafka, Spark, WebRTC, SSE, Architecture]
 toc: true
 comments: true

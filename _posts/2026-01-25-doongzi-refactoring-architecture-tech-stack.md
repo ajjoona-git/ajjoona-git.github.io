@@ -1,7 +1,7 @@
 ---
 title: "[둥지] 서비스 런칭을 위한 리팩토링: 하이브리드 클라우드 아키텍처와 기술 스택 선정의 이유"
 date: 2026-01-25 09:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [Architecture, FastAPI, React, AWS, HybridCloud, Celery, Redis, Refactoring, RDS, AdapterPattern, ProxyPattern]
 toc: true
 comments: true

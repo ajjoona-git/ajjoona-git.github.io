@@ -1,7 +1,7 @@
 ---
 title: "[둥지] 로그인/로그아웃 코드리뷰: 보안 취약점 발굴과 트러블슈팅"
 date: 2026-03-09 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Redis, JWT, Security, CodeReview, Troubleshooting, Backend, Python, Auth]
 toc: true
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 비동기 통합 테스트 아키텍처: SQLAlchemy Savepoint와 롤백 전략"
 date: 2026-03-08 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Python, SQLAlchemy, Pytest, Asyncio, UnitTest, IntegrationTest, Architecture, Celery]
 toc: true
 comments: true

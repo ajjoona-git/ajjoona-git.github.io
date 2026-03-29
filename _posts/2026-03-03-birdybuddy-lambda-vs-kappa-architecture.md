@@ -1,7 +1,7 @@
 ---
 title: "[허수아비] 람다(Lambda) vs 카파(Kappa) 아키텍처: 데이터 파이프라인 설계기"
 date: 2026-03-03 10:00:00 +0900
-categories: [Projects, 허수아비]
+categories: [Project, 허수아비]
 tags: [Architecture, Kafka, Spark, Hadoop, DataPipeline, Lambda, Kappa, BigData, Streaming, Backend, Infra]
 toc: true
 comments: true

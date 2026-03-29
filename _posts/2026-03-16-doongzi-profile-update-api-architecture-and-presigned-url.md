@@ -1,7 +1,7 @@
 ---
 title: "[둥지] 사용자 정보 수정: 단일 API vs 분리형 API"
 date: 2026-03-16 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, RESTAPI, Architecture, S3, Pydantic, Backend]
 toc: true
 comments: true

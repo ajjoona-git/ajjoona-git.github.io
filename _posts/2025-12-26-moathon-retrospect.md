@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 프로젝트 회고"
 date: 2025-12-26 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Retrospect, Vue.js, Django, GSAP, AWS, Gamification, Git, Insight]
 description: "금융 목표 달성을 돕는 '모아톤' 프로젝트의 최종 회고록입니다. Django Signals를 활용한 뱃지 시스템, GSAP 트랙 애니메이션 구현 등 기술적 성취와 협업 프로세스, 그리고 프론트엔드와 백엔드 역할에 대한 인사이트를 담았습니다."
 ---

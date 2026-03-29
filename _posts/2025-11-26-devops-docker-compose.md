@@ -1,7 +1,7 @@
 ---
 title: "[둥지] Ubuntu 서버에서 Docker Compose로 React 앱 배포하기 (feat. 수동 배포의 맛)"
 date: 2025-11-26 09:00:00 +0900
-categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
+categories: [Project, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [DevOps, Docker, DockerCompose, Ubuntu, React, Nginx, Deployment]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

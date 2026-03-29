@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] Django 비밀번호 재설정 이메일 발송 구현과 트러블슈팅"
 date: 2025-12-13 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Django, DRF, DjRestAuth, SMTP, ConnectionRefusedError, WinError10061, Troubleshooting, Backend, Authentication]
 toc: true 
 comments: true

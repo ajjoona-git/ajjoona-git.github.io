@@ -1,7 +1,7 @@
 ---
 title: "[둥지] 결제 시스템 도입에 따른 회원 탈퇴 정책 고도화 및 OAuth 연동 해제 전략"
 date: 2026-03-13 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [Backend, Architecture, SoftDelete, OAuth, Privacy, Database]
 toc: true
 comments: true

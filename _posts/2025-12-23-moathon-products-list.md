@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 금융 상품 리스트 성능 최적화 (Client-side Filtering & Caching)"
 date: 2025-12-23 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Frontend, Vue.js, Pinia, Performance, Caching, Refactoring, Architecture, UX]
 image: /assets/img/posts/2025-12-23-moathon-products-list/4.png
 toc: true 

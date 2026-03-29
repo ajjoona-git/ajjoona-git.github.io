@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] 프론트엔드 개발 회고"
 date: 2025-12-05 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Retrospect, Frontend, UI/UX, Troubleshooting, Optimization, Django, Collaboration]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

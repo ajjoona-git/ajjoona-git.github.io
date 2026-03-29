@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] Spring Boot 실행 에러: application.yml 들여쓰기와 @Value 바인딩 문제"
 date: 2026-01-20 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [SpringBoot, Troubleshooting, YAML, Configuration, JWT, ErrorLog]
 toc: true
 comments: true

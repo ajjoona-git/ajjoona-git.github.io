@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 프로젝트 초기 설정: Config와 Main 구성하기"
 date: 2026-02-22 18:40:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [Backend, FastAPI, Python, Pydantic, Configuration, EnvironmentVariables, Settings]
 toc: true
 comments: true

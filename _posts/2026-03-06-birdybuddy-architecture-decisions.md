@@ -1,7 +1,7 @@
 ---
 title: "[허수아비] 시스템 아키텍처 의사결정 총정리"
 date: 2026-03-06 10:00:00 +0900
-categories: [Projects, 허수아비]
+categories: [Project, 허수아비]
 tags: [Architecture, Kafka, Spark, Hadoop, Lambda, WebRTC, SSE, MediaMTX, Docker, Backend, ADR, Infra]
 toc: true
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] Django 앱 분리 리팩토링과 API 문서화 도구(Swagger) 교체기"
 date: 2025-12-19 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Django, DRF, Refactoring, DrfSpectacular, Swagger, Architecture, Backend]
 toc: true 
 comments: true

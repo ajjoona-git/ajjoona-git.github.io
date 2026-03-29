@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] Spring Boot context-path 설정 시 403 에러 해결 (경로 매핑 중복 문제)"
 date: 2026-01-20 15:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [SpringBoot, Troubleshooting, ContextPath, SpringSecurity, 403Forbidden, API]
 toc: true
 comments: true

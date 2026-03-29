@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 환경 변수 관리: 전역 객체 대신 get_settings()와 DI를 선택한 이유"
 date: 2026-02-23 21:20:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [Backend, FastAPI, Python, Pydantic, DependencyInjection, Testing, Architecture]
 toc: true
 comments: true

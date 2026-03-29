@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] JPA Dirty Checking과 Bulk 연산 혼용 시 데이터 증발 문제 (feat. flushAutomatically)"
 date: 2026-01-29 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [SpringBoot, JPA, Troubleshooting, BulkUpdate, DirtyChecking, Scheduler, PersistenceContext, Modifying, Transactional]
 toc: true
 comments: true

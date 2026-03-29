@@ -1,7 +1,7 @@
 ---
 title: "[허수아비] 모노레포 프로젝트 구조"
 date: 2026-03-08 10:00:00 +0900
-categories: [Projects, 허수아비]
+categories: [Project, 허수아비]
 tags: [Monorepo, Docker, Architecture, CI/CD, DevOps, Kafka, Spark, Backend, EC2, Infra]
 toc: true
 comments: true

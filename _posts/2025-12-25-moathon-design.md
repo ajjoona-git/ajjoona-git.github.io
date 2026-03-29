@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] UI/UX 최종 디자인 적용 및 프론트엔드 트러블슈팅 로그"
 date: 2025-12-25 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Frontend, Vue.js, CSS, UI/UX, DesignSystem, Troubleshooting, Refactoring]
 toc: true 
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI + GitHub Actions: Pydantic 환경 변수(ValidationError) 트러블슈팅"
 date: 2026-02-25 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Pydantic, GitHubActions, CI/CD, Troubleshooting, Pytest, EnvironmentVariables]
 toc: true
 comments: true

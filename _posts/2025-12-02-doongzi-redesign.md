@@ -1,7 +1,7 @@
 ---
 title: "[둥지] 포트폴리오 완성을 위한 메인 페이지 UI/UX 리디자인"
 date: 2025-12-02 09:00:00 +0900
-categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
+categories: [Project, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [UI/UX, Design, Frontend, Refactoring, Portfolio]     # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

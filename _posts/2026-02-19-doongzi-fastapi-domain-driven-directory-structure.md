@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 백엔드 폴더 구조 설계: 도메인 기반 아키텍처(DDD)"
 date: 2026-02-19 11:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Python, Architecture, DDD, Backend, DirectoryStructure, Docker]
 toc: true
 comments: true

@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 로그인 후 팔로우 목록 조회 오류 수정 (비동기 처리 & Race Condition)"
 date: 2025-12-24 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Frontend, Vue.js, Async, Await, Pinia, Troubleshooting, RaceCondition, StateManagement, SPA]
 toc: true 
 comments: true

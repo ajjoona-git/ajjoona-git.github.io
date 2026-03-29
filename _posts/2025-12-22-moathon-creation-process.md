@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] 모아톤 생성 프로세스 구현 (Direct vs Recommend 모드)"
 date: 2025-12-22 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [Django, Vue.js, Pinia, UX, Troubleshooting, Refactoring]
 toc: true 
 comments: true

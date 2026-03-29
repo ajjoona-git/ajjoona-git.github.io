@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] Django(백엔드)와 JavaScript(프론트엔드)의 역할 분담을 어떻게 할까요?"
 date: 2025-10-02 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Django, JavaScript, Architecture, API, Frontend, Backend, DOM, Session, Collaboration]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

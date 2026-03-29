@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] 메타버스 독서 플랫폼 DB 설계: 단일 테이블 전략과 데이터 분리"
 date: 2026-01-15 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [DatabaseDesign, DB, ERD, SystemArchitecture, Refactoring, Redis, Optimization, RBAC]
 toc: true 
 comments: true

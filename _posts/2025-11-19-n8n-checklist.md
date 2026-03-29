@@ -1,7 +1,7 @@
 ---
 title: "[둥지] Supabase와 n8n 연결해서 메일로 보내봅시다"
 date: 2025-11-19 09:00:00 +0900
-categories: [Projects, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
+categories: [Project, 둥지]  # 계층적 카테고리 지원 [대분류, 소분류]
 tags: [n8n, Supabase, PostgreSQL, Automation]      # 태그 (소문자 권장)
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시

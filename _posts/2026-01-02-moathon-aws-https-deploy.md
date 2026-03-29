@@ -1,7 +1,7 @@
 ---
 title: "[모아톤] AWS HTTPS 배포 가이드 (CloudFront + Nginx + Certbot)"
 date: 2026-01-02 09:00:00 +0900
-categories: [Projects, 모아톤]
+categories: [Project, 모아톤]
 tags: [AWS, Https, CloudFront, Nginx, Certbot, SSL, Deployment, Nip.io, Network]
 toc: true 
 comments: true

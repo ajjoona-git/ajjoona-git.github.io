@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 비동기 DB 세팅: SQLAlchemy 2.0 세션 관리와 이중 방어 모델링"
 date: 2026-02-23 20:30:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Python, Backend, SQLAlchemy, Database, Asyncpg, Alembic, Architecture, Docker, TroubleShooting]
 toc: true
 comments: true

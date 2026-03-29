@@ -1,7 +1,7 @@
 ---
 title: "[쉽길] 경로 안내 페이지 UI/UX 개선 (Grid 레이아웃 & 모달 적용)"
 date: 2025-11-18 09:00:00 +0900
-categories: [Projects, 쉽길]
+categories: [Project, 쉽길]
 tags: [Frontend, CSS, UI/UX, Refactoring, JavaScript]
 toc: true 
 comments: true 

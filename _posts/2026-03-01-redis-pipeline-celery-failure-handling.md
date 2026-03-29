@@ -1,7 +1,7 @@
 ---
 title: "[둥지] Redis 파이프라인과 Celery 예외 처리: 분산 환경에서 데이터 일관성 지키기"
 date: 2026-03-01 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Redis, Celery, Exception, Backend, Transaction, Rollback, Architecture, Troubleshooting]
 toc: true
 comments: true

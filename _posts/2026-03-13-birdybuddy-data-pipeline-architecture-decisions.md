@@ -1,7 +1,7 @@
 ---
 title: "[허수아비] 실시간 데이터 파이프라인 아키텍처 설계: 선택과 집중"
 date: 2026-03-13 13:40:00 +0900
-categories: [Projects, 허수아비]
+categories: [Project, 허수아비]
 tags: [Architecture, DataPipeline, ApacheSpark, Kafka, Hadoop, SSE, Troubleshooting]
 toc: true
 comments: true

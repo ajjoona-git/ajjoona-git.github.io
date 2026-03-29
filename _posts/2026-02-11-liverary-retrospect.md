@@ -1,7 +1,7 @@
 ---
 title: "[LIVErary] 프로젝트 회고"
 date: 2026-02-11 09:00:00 +0900
-categories: [Projects, LIVErary]
+categories: [Project, LIVErary]
 tags: [Retrospect, FullStack, Frontend, Backend, SpringBoot, JPA, React, DDD, Troubleshooting, Optimization]
 toc: true
 comments: true

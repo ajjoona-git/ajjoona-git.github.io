@@ -1,7 +1,7 @@
 ---
 title: "[둥지] FastAPI 비동기 환경의 테스트 아키텍처 구축기"
 date: 2026-03-08 10:00:00 +0900
-categories: [Projects, 둥지]
+categories: [Project, 둥지]
 tags: [FastAPI, Pytest, SQLAlchemy, AsyncIO, Testing, Celery, Backend, Python, Integration]
 toc: true
 comments: true
