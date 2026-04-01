@@ -280,3 +280,6 @@ retry 도입 시 아래 중 하나를 반드시 보완해야 합니다.
 - dispatch 실패도 같은 row에서 관리
 - retry도 같은 row에서 관리
 - 상태는 단순하게 유지
+
+![비동기 아키텍처 다이어그램](/assets/img/posts/2026-03-26-doongzi-issuance-ocr-task-design/1.png)
+*비동기 아키텍처 다이어그램*
