@@ -92,6 +92,8 @@ public ResponseEntity<ErrorResponse> handleBindException(BindException e) {
 }
 ```
 
+→ GlobalExceptionHandler 설계 전반과 ErrorCode 인터페이스 구조는 [[SAN] GlobalExceptionHandler 설계: BindException 통합과 ErrorCode 인터페이스]({% post_url 2026-05-04-san-global-exception-handler %})에서 이어집니다.
+
 ### CGLIB 프록시: 인터페이스 구현 클래스에 `@Async`를 붙이면 생기는 문제
 
 같은 날 별개 이슈로 서버 기동 실패가 발생했습니다. `KnowledgeCardAnalysisJobProcessor`의 `@TransactionalEventListener handle()` 메서드를 프록시에서 찾지 못하는 오류입니다.
@@ -111,6 +113,8 @@ public class AsyncConfig { ... }
 ```
 
 `proxyTargetClass = true`를 설정하면 인터페이스 유무와 관계없이 항상 CGLIB 프록시(클래스 기반 서브클래싱)를 사용합니다. 클래스의 모든 메서드가 프록시에 노출되므로 `handle()`도 정상 동작합니다.
+
+→ 에러 메시지 전문, 대안 비교, CGLIB 적용 시 주의사항은 [[SAN] CGLIB 프록시: @Async + 인터페이스 구현 클래스에서 발생하는 기동 실패]({% post_url 2026-05-04-san-cglib-proxy-issue %})에서 이어집니다.
 
 ## Scrap 임베딩 논의
 
