@@ -93,7 +93,7 @@ Supabase에서 설정 > Data API에서 `Project URL`를, API Keys의 Legacy API 
 - **Table:** `checklist_progress`
 - **Return All:** `True` (또는 Limit을 100 정도로 넉넉히 설정)
 - **Filters:**
-    - `user_email` **Equal** `{{ $json.body.userEmail }}`
+    - `user_email` **Equal** `{% raw %}{{ $json.body.userEmail }}{% endraw %}`
     - (Webhook으로 들어오는 Body에 `userEmail`이 있다고 가정합니다)
 
 ![Supabase Node 설정](/assets/img/posts/2025-11-19-n8n-checklist/23.png)
@@ -196,7 +196,7 @@ return [{ json: { html: html, email: userEmail } }];
 
 ### 2-4 HTML to PDF Node (또는 대체재)
 
-생성된 HTML을 PDF 파일로 변환합니다. `HTML to PDF` 노드를 연결하고 `Content` 속성에 `{{ $json.html }}`을 매핑하세요.
+생성된 HTML을 PDF 파일로 변환합니다. `HTML to PDF` 노드를 연결하고 `Content` 속성에 `{% raw %}{{ $json.html }}{% endraw %}`을 매핑하세요.
 
 Create New Credential 에서 API Key를 추가해야 한다. API Docs 링크를 타고 들어가 로그인/회원가입 후 API Key 발급을 받으면 확인할 수 있다.
 
@@ -206,7 +206,7 @@ Create New Credential 에서 API Key를 추가해야 한다. API Docs 링크를 
 ![HTML to PDF Credential 설정](/assets/img/posts/2025-11-19-n8n-checklist/20.png)
 *HTML to PDF Credential 설정*
 
-- **HTML Content**: `{{ $json.html }}`
+- **HTML Content**: `{% raw %}{{ $json.html }}{% endraw %}`
 
 ![HTML to PDF Node 설정](/assets/img/posts/2025-11-19-n8n-checklist/19.png)
 *HTML to PDF Node 설정*
@@ -227,11 +227,11 @@ Create New Credential 버튼을 누르고, Sign in with Google에서 동의하�
 
 - **Resource:** `Message`
 - **Operation:** `Send`
-- **To:** `{{ $json.email }}` (Code 노드에서 넘겨준 이메일)
+- **To:** `{% raw %}{{ $json.email }}{% endraw %}` (Code 노드에서 넘겨준 이메일)
 - **Subject:** `[둥지] ${new Date().toLocaleDateString()} 체크리스트 리포트`
 - **HTML / Body:**
     - PDF를 만들었다면: "첨부파일을 확인해주세요."
-    - PDF가 없다면: `{{ $json.html }}` (HTML 본문 직접 삽입)
+    - PDF가 없다면: `{% raw %}{{ $json.html }}{% endraw %}` (HTML 본문 직접 삽입)
 - **Attachments:** PDF 생성 노드의 Output Binary Property 이름 (보통 `data`)을 입력.
 
 ![Gmail Node 설정](/assets/img/posts/2025-11-19-n8n-checklist/17.png)
@@ -254,7 +254,7 @@ Create New Credential 버튼을 누르고, Sign in with Google에서 동의하�
 ![Supabase에 mock data 생성](/assets/img/posts/2025-11-19-n8n-checklist/15.png)
 *Supabase에 mock data 생성*
 
-만약 Gmail 노드 설정 시 받는 사람(`To`)을 `{{ $json.email }}` 변수로 설정했다면, 실제 테스트할 때는 1단계 SQL에서 `test@example.com` 대신 **본인이 확인 가능한 실제 이메일 주소**로 데이터를 넣어야 메일을 받을 수 있습니다.
+만약 Gmail 노드 설정 시 받는 사람(`To`)을 `{% raw %}{{ $json.email }}{% endraw %}` 변수로 설정했다면, 실제 테스트할 때는 1단계 SQL에서 `test@example.com` 대신 **본인이 확인 가능한 실제 이메일 주소**로 데이터를 넣어야 메일을 받을 수 있습니다.
 
 ```sql
 -- 본인 이메일로 테스트 데이터를 다시 넣고 싶다면:
@@ -290,7 +290,7 @@ n8n의 Code 노드에서 `$node["노드이름"]`을 사용할 때는 **노드의
 ![HTML to PDF 실행 결과](/assets/img/posts/2025-11-19-n8n-checklist/10.png)
 *HTML to PDF 실행 결과*
 
-Gmail Node에서 이메일 주소 변수가 잘못 입력되어 에러가 발생했다. `{{ $('Code in JavaScript').item.json.email }}`로 변경해 올바른 이메일 주소를 받아오도록 변경했다.
+Gmail Node에서 이메일 주소 변수가 잘못 입력되어 에러가 발생했다. `{% raw %}{{ $('Code in JavaScript').item.json.email }}{% endraw %}`로 변경해 올바른 이메일 주소를 받아오도록 변경했다.
 
 ![Error: **Cannot read properties of undefined (reading 'split')**](/assets/img/posts/2025-11-19-n8n-checklist/9.png)
 *Error: *Cannot read properties of undefined (reading 'split')*
