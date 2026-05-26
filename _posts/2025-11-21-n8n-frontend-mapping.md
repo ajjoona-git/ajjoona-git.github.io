@@ -21,7 +21,7 @@ n8n 워크플로우의 논리적 모순(Switch 노드와 If 노드의 충돌)을
 
 - **노드:** `If` 노드 (PDF 파일 가져오기 뒤에 있는 노드)
 - **수정할 설정:**
-    - **Value 1 (Left Value):** `{{ $json.body.action }}` → **`{{ $json.body.export_type }}`**
+    - **Value 1 (Left Value):** `{% raw %}{{ $json.body.action }}{% endraw %}` → **`{% raw %}{{ $json.body.export_type }}{% endraw %}`**
     - **Value 2 (Right Value):** `email` (그대로 유지)
 
 ![If Node 재설정](/assets/img/posts/2025-11-21-n8n-frontend-mapping/5.png)
@@ -216,13 +216,11 @@ export default function App() {
 
 메인 화면은 잘 떴는데, ‘둥지 짓기 플랜’ 버튼을 누르면 세부 페이지가 하얀 빈 화면으로 떴다. 그리고 Console을 확인하니 이런 오류 메시지가 있었다.
 
-```markdown
-`ReferenceError: Download is not defined` 에러는 컴포넌트 내에서 `<Download />` 아이콘을 사용했지만, 상단에서 `import` 하지 않았기 때문에 발생합니다.
+`ReferenceError: Download is not defined` 에러는 컴포넌트 내에서 `<Download />` 아이콘을 사용했지만, 상단에서 `import` 하지 않았기 때문에 발생한다.
 
-빈 화면이 뜨는 이유는 이 에러 때문에 React 렌더링이 중단되었기 때문입니다.
+빈 화면이 뜨는 이유는 이 에러 때문에 React 렌더링이 중단되었기 때문이다.
 
-방금 수정한 `src/components/ChecklistSection.tsx` 파일에서 `lucide-react` import 부분을 수정해야 합니다.
-```
+방금 수정한 `src/components/ChecklistSection.tsx` 파일에서 `lucide-react` import 부분을 수정해야 한다.
 
 `src/components/ChecklistSection.tsx` 파일 상단의 import 구문을 다음과 같이 수정해서 해결했다.
 
