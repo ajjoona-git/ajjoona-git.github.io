@@ -94,7 +94,7 @@ WHERE status = 'FAILED' AND error_message LIKE '%Timeout%';
 
 ### error_code가 아닌 error_message 전문이 중요한 이유
 
-동기 API에서는 `ErrorCode.AI_TIMEOUT`처럼 규격화된 코드가 맞습니다. 하지만 비동기 백그라운드 작업의 실패는 백엔드 개발자의 디버깅을 위한 기록이어야 합니다.
+동기 API에서는 `ErrorCode.AI_TIMEOUT`처럼 규격화된 코드가 맞습니다. 프론트엔드가 그 코드를 보고 사용자에게 적절한 메시지를 보여줄 수 있기 때문입니다. 하지만 비동기 백그라운드 작업의 실패 기록은 **백엔드 개발자의 디버깅을 위한 것**입니다. 성격이 다릅니다.
 
 AI 서버 실패 사유는 사전에 정의하기 어렵습니다.
 
@@ -104,4 +104,30 @@ AI 서버 실패 사유는 사전에 정의하기 어렵습니다.
 
 이런 구체적인 사유들을 `error_code` 몇 개로 미리 정의하는 것은 현실적이지 않습니다. 비동기 작업은 에러가 나도 화면에 바로 표시되지 않고 조용히 실패하기 때문에, DB에 `AI_ERROR`라는 코드만 남아있으면 개발자는 방대한 서버 로그를 시간대별로 뒤져야 합니다.
 
-다만 Full Stack Trace를 그대로 저장하면 용량을 낭비하므로, 1000자로 잘라 저장합니다.
+### errorCode + errorTrace 조합은 어떨까
+
+넓은 카테고리 수준(5~6개)의 `errorCode`와 상세 원인을 담는 `errorTrace`를 함께 쓰는 방법도 검토했습니다.
+
+```
+errorCode  = AI_COMMUNICATION_FAILED   ← 넓은 분류
+errorTrace = "WebClientResponseException: 429 Too Many Requests
+               caused by: Rate limit exceeded (8500 > 8192)"
+```
+
+`WHERE error_code = 'AI_COMMUNICATION_FAILED'` 같은 쿼리 필터링이 가능하다는 장점이 있습니다. 그러나 현재 프로젝트 규모에서 에러를 코드로 분류해 집계·필터링할 요구사항이 없었기 때문에, 필드를 추가하는 복잡도 대비 실익이 없었습니다.
+
+### cause chain만 추출해서 저장
+
+Java의 전체 스택트레이스를 그대로 저장하면 건당 수십~수백 줄에 달합니다. 실제 가치 있는 정보는 첫 줄과 `Caused by` 체인뿐이고, 전체 트레이스는 Logback 서버 로그에 남으므로, DB에는 **cause chain만 추출**해서 저장하는 것이 실용적입니다.
+
+```
+BusinessException: AI 분석 요청에 실패했습니다.
+  caused by: WebClientResponseException$TooManyRequests: 429 Too Many Requests
+  caused by: reactor.core.Exceptions: Rate limit exceeded
+```
+
+- `errorMessage` 필드에 cause chain을 순회해 추출한 메시지를 저장
+- `errorCode` 필드는 추가하지 않음 — cause chain 메시지 자체로 원인 파악이 가능
+- 별도 `errorTrace` 필드도 추가하지 않음 (오버엔지니어링)
+
+cause chain 순회 로직은 `AsyncJobProcessor` 인터페이스의 `default` 메서드 `resolveErrorMessage(e, fallback)`로 공통화해 구현체마다 중복 작성하지 않도록 했습니다.
