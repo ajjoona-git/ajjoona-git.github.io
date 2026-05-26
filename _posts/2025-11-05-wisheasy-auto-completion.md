@@ -26,30 +26,8 @@ description: "서버 부하를 줄이는 Debouncing 기술과 사용자 경험�
 4. **Server (Django):** 검색 결과(예: ["강남역", "강남구청역"])를 JSON 형태로 반환한다.
 5. **Client (JS):** 응답받은 데이터를 기반으로 UI에 자동완성 목록을 렌더링한다.
 
-```mermaid
-
-sequenceDiagram
-    participant User as 사용자
-    participant JS as 브라우저 (search-util.js)
-    participant Server as Django 서버
-    participant DB as 데이터베이스
-
-    User->>JS: '강' 입력 (input 이벤트)
-    JS->>JS: 300ms 디바운스 타이머 시작
-
-    User->>JS: '남' 입력 (input 이벤트)
-    JS->>JS: (이전 타이머 취소)
-    JS->>JS: 300ms 디바운스 타이머 재시작
-
-    opt 300ms 경과 (사용자 타이핑 멈춤)
-        JS->>Server: 1. API 요청 (GET /api/search/stations/?q=강남)
-        Server->>DB: 2. DB 조회 (Station.objects.filter(name__startswith='강남'))
-        DB-->>Server: 3. 역 목록 ['강남역', '강남구청역']
-        Server-->>JS: 4. JSON 응답 ({"results": [...]})
-        JS->>JS: 5. 자동완성 UI 렌더링
-        JS-->>User: 6. 자동완성 목록 표시
-    end
-```
+![시퀀스 다이어그램](/assets/img/posts/2025-11-05-wisheasy-auto-completion/3.png)
+*시퀀스 다이어그램*
 
 ---
 
