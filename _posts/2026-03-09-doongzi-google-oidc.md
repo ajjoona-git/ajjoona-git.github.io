@@ -46,11 +46,11 @@ description: "구글 소셜 로그인이 실제로 어떻게 동작하는지, �
 1. **유저 조회:** DB의 `User` 테이블에서 해당 이메일이 존재하는지 조회합니다.
 2. **분기 처리:**
 
-| 케이스 | 조건 | 처리 |
-|--------|------|------|
-| 일반 계정 충돌 | 이미 로컬 계정으로 가입된 이메일 | `LocalAccountAlreadyExistsException(400)` 반환 |
-| 최초 로그인 (자동 가입) | DB에 유저 없음 | 랜덤 닉네임 생성 후 `password=None`, `provider="GOOGLE"`로 Insert |
-| 기존 소셜 계정 | 이미 가입된 구글 유저 | 그대로 통과 |
+  | 케이스 | 조건 | 처리 |
+  |--------|------|------|
+  | 일반 계정 충돌 | 이미 로컬 계정으로 가입된 이메일 | `LocalAccountAlreadyExistsException(400)` 반환 |
+  | 최초 로그인 (자동 가입) | DB에 유저 없음 | 랜덤 닉네임 생성 후 `password=None`, `provider="GOOGLE"`로 Insert |
+  | 기존 소셜 계정 | 이미 가입된 구글 유저 | 그대로 통과 |
 
 3. **집 주소(Nest) 확인:** 해당 유저의 `Nest` 테이블 데이터를 조회하여, 등록된 주소가 있는지 확인하고 프론트엔드로 보낼 `redirect_url`을 결정합니다.
 
@@ -63,13 +63,13 @@ description: "구글 소셜 로그인이 실제로 어떻게 동작하는지, �
 2. **Redis 화이트리스트 등록:** 생성된 Refresh Token을 Redis에 저장(`auth:refresh_token:{user_id}`)하여 다중 기기 제어 및 세션 관리를 준비합니다.
 3. **최종 응답:** 프론트엔드에게 `200 OK`와 함께 발급된 토큰 2개, 그리고 `redirect_url`을 JSON으로 응답하며 모든 플로우가 종료됩니다.
 
-```json
-{
-  "access_token": "eyJ...",
-  "refresh_token": "eyJ...",
-  "redirect_url": "/home"
-}
-```
+  ```json
+  {
+    "access_token": "eyJ...",
+    "refresh_token": "eyJ...",
+    "redirect_url": "/home"
+  }
+  ```
 
 ---
 
