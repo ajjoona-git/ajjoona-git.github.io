@@ -5,7 +5,7 @@ categories: [Project, 쉽길]
 tags: [Django, JavaScript, Architecture, API, Frontend, Backend, DOM, Session, Collaboration]
 toc: true                            # 이 게시글에 플로팅 목차 표시
 comments: true                         # 이 게시글에 Giscus 댓글 창 표시
-# image: /assets/img/posts/2025-12-04-async-settimeout/cover.png
+image: /assets/img/posts/2025-10-02-javascript-django/1.png
 description: "SSR(Django)과 CSR(JavaScript)의 장단점을 비교하고, 쉽길 프로젝트를 위한 하이브리드 아키텍처와 API 명세서 기반 협업 방식을 설계합니다."
 ---
 
@@ -39,12 +39,8 @@ description: "SSR(Django)과 CSR(JavaScript)의 장단점을 비교하고, 쉽�
 - 세션: 서버에 상태 저장, 브라우저엔 세션ID만 쿠키로 보관
     - 로그인, 장바구니, 경로 안내 등에 활용
 
-```mermaid
-flowchart TB
-A[브라우저] -- 세션ID 쿠키 --> B[서버]
-B -->|세션 저장소| C[(user_id: 5<br/>cart: 1,2,3)]
-
-```
+![세션](/assets/img/posts/2025-10-02-javascript-django/4.png)
+*세션*
 
 ## 자바스크립트와 장고의 HTTP 요청 방식
 
@@ -60,24 +56,8 @@ B -->|세션 저장소| C[(user_id: 5<br/>cart: 1,2,3)]
 - 서버가 반환한 **HTML 전체를 브라우저가 새로 렌더**한다(페이지 이동/새로고침).
 - 브라우저가 응답을 처리한다.(전체 페이지 새 렌더)
 
-```mermaid
-sequenceDiagram
-    participant B as 브라우저
-    participant S as 서버
-    rect rgb(245,245,245)
-    Note over B: 장고 전통 방식 (form)
-    B->>S: POST /login (form submit)
-    S-->>B: HTML 페이지
-    Note over B: 브라우저가 전체 렌더
-    end
-    rect rgb(245,245,245)
-    Note over B: JS 방식 (fetch)
-    B->>S: POST /api/login (fetch)
-    S-->>B: JSON 응답
-    Note over B: JS가 JSON 파싱 → DOM 일부 갱신
-    end
-
-```
+![브라우저-서버 다이어그램](/assets/img/posts/2025-10-02-javascript-django/3.png)
+*브라우저-서버 다이어그램*
 
 ### 자바스크립트 vs 장고
 
@@ -90,12 +70,11 @@ sequenceDiagram
 | 서버 역할 | JSON만 제공(API) | HTML 렌더링 제공 |
 | 구현 난이도 | JS 로직 필요, UX 유연 | 단순·견고, SEO/URL 명확 |
 | 네트워크 | 필요 시 fetch | 링크/폼/리다이렉트 |
-- **JS 메모리/Storage** = 종이 쪽지에 경로 적어서 내가 들고 다님
 
+- **JS 메모리/Storage** = 종이 쪽지에 경로 적어서 내가 들고 다님
     → 새로고침하면 쪽지 잃어버리거나, 다른 사람이 쪽지 훔칠 수 있음
 
 - **서버 세션** = 식당 보관함에 맡기고 보관증(세션ID)만 들고 다님
-
     → 새로고침해도 서버가 기억하고 있고, 보안도 상대적으로 안전함
 
 
@@ -105,15 +84,8 @@ sequenceDiagram
 - 상태(cards, 로그인 정보 등)를 **브라우저 메모리나 localStorage**에 들고 있음
 - 페이지 이동 없이 **JS가 직접 DOM을 갱신**함
 
-```mermaid
-sequenceDiagram
-    participant B as 브라우저(JS)
-    participant S as 서버(API)
-    B->>S: GET /api/route?origin=시청&dest=고속터미널
-    S-->>B: JSON [ {title:"출발"}, {title:"환승"}, {title:"도착"} ]
-    Note over B: cards 배열에 저장 → 버튼 클릭 시 idx++ 후 DOM 업데이트
-
-```
+![다이어그램](/assets/img/posts/2025-10-02-javascript-django/2.png)
+*다이어그램*
 
 ## 쉽길 프로젝트에 적용
 
@@ -124,17 +96,8 @@ sequenceDiagram
     - 각 스텝이 **독립된 URL**로 있어도 문제 없음
     - 따라서 **장고 전통 방식(서버 렌더링 + 세션 저장)**이 단순하고 안정적임
 
-```mermaid
-sequenceDiagram
-    participant U as 사용자
-    participant S as 장고 서버
-    U->>S: GET /route/start?origin=시청&dest=고속터미널
-    S-->>U: 302 Redirect → /route/<id>/step/0
-    U->>S: GET /route/<id>/step/0
-    S-->>U: HTML(0번 카드)
-    U->>S: GET /route/<id>/step/1
-    S-->>U: HTML(1번 카드)
-```
+![다이어그램](/assets/img/posts/2025-10-02-javascript-django/1.png)
+*다이어그램*
 
 ### Django (서버 사이드) 역할: 웹의 뼈대와 핵심 로직 구축
 
