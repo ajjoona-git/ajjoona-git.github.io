@@ -53,7 +53,7 @@ TypeItemMapping
 
 "어떤 항목이 들어갈지"를 DB 조인이 아닌 파이썬 파이프라인이 결정하는 방식입니다.
 
-```python
+```
 NestContext(property_type, contract_type, deposit, rent, address_road)
     → BaseBuilder   # 공통 항목 추가
     → TypeFilter    # 주택 유형별 전용 항목 추가
@@ -72,7 +72,7 @@ NestContext(property_type, contract_type, deposit, rent, address_road)
 
 B안과 함께 검토한 보완 아이디어입니다. 백엔드는 `item_key`와 `status`만 응답하고, 항목의 제목·설명·버튼 같은 텍스트는 프론트엔드 정적 파일(`constants/checklist.ts`)에서 관리하는 방식입니다.
 
-```json
+```jsonc
 // 백엔드 응답 (가볍고 빠름)
 [
   { "id": "uuid", "item_key": "REGISTRY_ISSUE", "status": "SUCCESS" },
