@@ -19,7 +19,8 @@ description: "DTO 유효성 검증(@Valid) 실패 시 400 Bad Request가 아닌 
 `test.http`를 이용해 다양한 시나리오를 테스트했다.
 
 ### Case 1. 정상 요청 (200 OK)
-```http
+
+```text
 POST {{host}}/api/room/reservation
 Content-Type: application/json
 
@@ -44,7 +45,7 @@ Content-Type: application/json
 
 * **조건:** 종료 시간이 시작 시간보다 빠름 (`@AssertTrue` 위반) 또는 과거 날짜 입력 (`@Future` 위반).
 
-```http
+```text
 POST {{host}}/api/room/reservation
 Content-Type: application/json
 
@@ -59,12 +60,13 @@ Content-Type: application/json
 * **기대 결과:** 400 Bad Request ("시간 범위가 잘못되었습니다")
 * **실제 결과:** **500 Internal Server Error**
 * **로그:**
-```text
-ERROR ... GlobalExceptionHandler : 🚨 Unhandled Exception: 
-org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] ...
-default message [종료 시각은 시작 시각보다 이후여야 합니다.]
 
-```
+  ```text
+  ERROR ... GlobalExceptionHandler : 🚨 Unhandled Exception: 
+  org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] ...
+  default message [종료 시각은 시작 시각보다 이후여야 합니다.]
+
+  ```
 
 로그를 자세히 보면 범인은 `MethodArgumentNotValidException`이다.
 
