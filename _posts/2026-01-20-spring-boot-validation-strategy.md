@@ -84,7 +84,7 @@ public class RoomController {
 ## Service 구현
 Service는 DB와 통신하며 실제 데이터의 무결성을 검증하고 트랜잭션을 관리한다.
 
-```Java
+```java
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true) // ① 기본 읽기 전용
