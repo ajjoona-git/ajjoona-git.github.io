@@ -179,23 +179,23 @@ doongzi-worker  | smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Pa
 
 1. API 응답
 
-![API 응답](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/4.png)
-*API 응답*
+    ![API 응답](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/4.png)
+    *API 응답*
 
 2. 실제 메일함
 
-![실제 메일함](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/3.png)
-*실제 메일함*
+    ![실제 메일함](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/3.png)
+    *실제 메일함*
 
 3. Celery 로그
 
-![celery 로그](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/2.png)
-*celery 로그*
+    ![celery 로그](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/2.png)
+    *celery 로그*
 
 4. Redis 적재 상태
 
-![Redis 적재 상태](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/1.png)
-*Redis 적재 상태*
+    ![Redis 적재 상태](/assets/img/posts/2026-03-01-redis-pipeline-celery-failure-handling/1.png)
+    *Redis 적재 상태*
 
 ---
 
