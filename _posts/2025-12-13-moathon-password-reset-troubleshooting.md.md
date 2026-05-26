@@ -18,28 +18,8 @@ description: "Django의 PasswordResetView를 활용하여 비밀번호 재설정
 
 비밀번호 재설정 요청은 다음과 같은 흐름으로 동작한다.
 
-```mermaid
-sequenceDiagram
-    participant User as 사용자
-    participant Front as 프론트엔드
-    participant Server as Django 서버
-    participant DB as 데이터베이스
-    participant SMTP as 이메일 서버(Google)
-
-    User->>Front: 이메일 입력 및 재설정 요청
-    Front->>Server: POST /accounts/find_password/
-    Server->>DB: 이메일 존재 여부 확인
-    alt 이메일 없음
-        Server-->>Front: 400 Bad Request (등록되지 않은 이메일)
-    else 이메일 있음
-        Server->>SMTP: 이메일 발송 요청
-        alt SMTP 설정 미흡
-            SMTP-->>Server: 500 ConnectionRefusedError
-        else 설정 완료
-            SMTP-->>User: 재설정 링크 이메일 수신
-        end
-    end
-```
+![비밀번호 재설정 흐름](/assets/img/posts/2025-12-13-moathon-password-reset-troubleshooting.md/6.png)
+*비밀번호 재설정 흐름*
 
 ## 트러블슈팅 로그 (Troubleshooting Log)
 
