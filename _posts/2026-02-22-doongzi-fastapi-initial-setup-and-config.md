@@ -280,4 +280,4 @@ env_filename = f".env.{current_env}"
 
 ### 레퍼런스
 
-https://fastapi.tiangolo.com/ko/advanced/settings/
+[설정과 환경변수 - FastAPI 공식 문서](https://fastapi.tiangolo.com/ko/advanced/settings/)
