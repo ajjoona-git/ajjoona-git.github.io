@@ -23,6 +23,7 @@ GET s3://birdybuddy/20260327/cam1_112017.jpg net::ERR_UNKNOWN_URL_SCHEME
 
 브라우저가 `s3://`라는 스킴을 알 수 없어 요청 자체를 거부한 것입니다. 이미지 URL이 HTTP(S) 주소가 아닌 내부 S3 경로 그대로 프론트엔드에 전달된 상태였습니다.
 
+---
 
 ## 세 가지 원인
 
@@ -66,6 +67,7 @@ Unsafe attempt to load URL http://minio:9000/... from frame with URL https://...
 
 `http://minio:9000`은 Docker 내부 네트워크 호스트명이라 외부 브라우저에서 직접 접근이 불가능합니다.
 
+---
 
 ## 시도한 방법들
 
@@ -82,7 +84,7 @@ url = url.replace(internalBase, publicEndpoint);
 
 > 실제로는 `MINIO_SERVER_URL` 설정 시 이 방식이 동작합니다. 최종 해결에서 다시 채택한 방법입니다.
 
-### 시도 2: presigned 전용 MinioClient를 공개 주소로 생성
+### 2. presigned 전용 MinioClient를 공개 주소로 생성
 
 ```java
 // MinioConfig.java
@@ -115,6 +117,7 @@ The request signature we calculated does not match the signature you provided.
 
 백엔드 기동 자체가 실패하여 502 Bad Gateway가 발생했습니다.
 
+---
 
 ## 어떻게 해결했나?
 
@@ -195,6 +198,7 @@ MINIO_PUBLIC_ENDPOINT=https://xxxxxxx.p.ssafy.io
   - ✅ `https://xxxxxxx.p.ssafy.io`
   - ❌ `https://xxxxxxx.p.ssafy.io/minio-storage` (MinioClient가 경로 포함 endpoint를 거부)
 
+---
 
 ## 해결 후 서명이 일치하는 전체 요청 흐름
 
@@ -215,6 +219,7 @@ MinIO
   → MINIO_SERVER_URL=https://xxxxxxx.p.ssafy.io 기준으로 서명 재검증 → 일치 → 200 OK
 ```
 
+---
 
 ## (대안) nginx Host 헤더 스푸핑 방식
 
